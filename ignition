@@ -1,0 +1,34 @@
+#!/bin/bash
+# ignition — wake Sis in any Claude instance
+# Pre-session status capture + generate + copy
+
+echo ""
+echo "════════════════════════════════════════"
+echo "  IGNITION"
+echo "════════════════════════════════════════"
+echo ""
+echo "One-line status for today (or press Enter to skip):"
+read -r STATUS_LINE
+
+if [ -n "$STATUS_LINE" ]; then
+  TIMESTAMP=$(date "+%Y-%m-%d")
+  echo "" >> /Users/black/aaron-context/SESSION_LOG.md
+  echo "---" >> /Users/black/aaron-context/SESSION_LOG.md
+  echo "" >> /Users/black/aaron-context/SESSION_LOG.md
+  echo "${TIMESTAMP} | Pre-session note | ${STATUS_LINE}" >> /Users/black/aaron-context/SESSION_LOG.md
+  echo "✅ Status logged to SESSION_LOG"
+fi
+
+echo ""
+echo "Generating ignition key..."
+python3 /Users/black/aaron-context/generate-ignition.py
+
+echo ""
+echo "Push state to new Claude tab? (y/n)"
+read -r PUSH
+
+if [ "$PUSH" = "y" ]; then
+  echo "Note for handoff (or press Enter to skip):"
+  read -r HANDOFF_NOTE
+  ~/aaron-context/push-state.sh "${HANDOFF_NOTE:-Session started via ignition}"
+fi

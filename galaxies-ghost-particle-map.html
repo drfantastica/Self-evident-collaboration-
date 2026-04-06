@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Galaxies / Ghost Particle — Compositional Map</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060608;
+  --white: #F0EEE8;
+  --dim: rgba(240,238,232,0.35);
+  --dimmer: rgba(240,238,232,0.12);
+  --teal: #5ECFCA;
+  --coral: #E87060;
+  --gold: #D4A853;
+  --ghost: rgba(240,238,232,0.06);
+  --mono: 'Share Tech Mono', monospace;
+  --serif: 'IM Fell English', serif;
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 11px;
+  width: 1400px;
+  margin: 0 auto;
+  padding: 60px 40px 80px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ── STAR FIELD ── */
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: twinkle var(--dur, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes twinkle {
+  0%,100% { opacity: var(--min, 0.1); }
+  50%      { opacity: var(--max, 0.6); }
+}
+
+/* ── GRAIN ── */
+body::after {
+  content:'';
+  position:fixed; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:0; opacity:0.5;
+}
+
+.content { position: relative; z-index: 1; }
+
+/* ── TITLE BLOCK ── */
+.title-block {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.main-title {
+  font-family: var(--serif);
+  font-size: 72px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--white);
+}
+
+.main-title .ghost-word {
+  font-style: italic;
+  color: var(--dim);
+}
+
+.slash {
+  color: var(--dimmer);
+  margin: 0 12px;
+  font-weight: 400;
+}
+
+.subtitle {
+  margin-top: 14px;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.inversion-line {
+  margin-top: 20px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--dim);
+}
+
+.inversion-line span {
+  color: var(--white);
+}
+
+/* ── WAVEFORM TIMELINE ── */
+.timeline-section {
+  margin-bottom: 56px;
+}
+
+.timeline-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dimmer);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.timeline-label::after {
+  content:''; flex:1; height:1px;
+  background: linear-gradient(to right, var(--dimmer), transparent);
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  height: 140px;
+}
+
+/* act backgrounds */
+.act-zone {
+  position: absolute;
+  top: 0; bottom: 0;
+  border-top: 1px solid;
+  padding-top: 8px;
+}
+
+.act-zone.one   { left:0;    width:33.33%; border-color: rgba(94,207,202,0.2); }
+.act-zone.two   { left:33.33%; width:33.33%; border-color: rgba(212,168,83,0.2); }
+.act-zone.three { left:66.66%; width:33.33%; border-color: rgba(232,112,96,0.2); }
+
+.act-num {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding-left: 8px;
+}
+.act-zone.one   .act-num { color: var(--teal); }
+.act-zone.two   .act-num { color: var(--gold); }
+.act-zone.three .act-num { color: var(--coral); }
+
+/* ── SVG WAVE ── */
+.wave-svg {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* ── LAYER TRACKS ── */
+.tracks {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 56px;
+}
+
+.track-row {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  gap: 0;
+}
+
+.track-label {
+  width: 160px;
+  flex-shrink: 0;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  color: var(--dim);
+  text-align: right;
+  padding-right: 16px;
+  text-transform: uppercase;
+}
+
+.track-body {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  border-top: 1px solid var(--ghost);
+}
+
+.track-fill {
+  position: absolute;
+  top: 4px; bottom: 4px;
+  border-radius: 2px;
+}
+
+.track-annotation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 8.5px;
+  letter-spacing: 0.06em;
+  color: var(--dim);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Ghost Particle — triplet pulse marks */
+.triplet-marks {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+}
+
+.triplet-mark {
+  width: 3px;
+  height: 60%;
+  background: rgba(94,207,202,0.4);
+  border-radius: 1px;
+  flex-shrink: 0;
+  margin-right: 9px;
+}
+
+/* ── THREE ACT PANELS ── */
+.acts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--ghost);
+  margin-bottom: 56px;
+}
+
+.act-panel {
+  background: var(--bg);
+  padding: 28px 24px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.act-panel::before {
+  content:'';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.act-panel.one::before   { background: var(--teal); }
+.act-panel.two::before   { background: var(--gold); }
+.act-panel.three::before { background: var(--coral); }
+
+/* large act number watermark */
+.act-watermark {
+  position: absolute;
+  bottom: -20px; right: -10px;
+  font-family: var(--serif);
+  font-size: 160px;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(240,238,232,0.025);
+  pointer-events: none;
+  user-select: none;
+}
+
+.act-header {
+  margin-bottom: 20px;
+}
+
+.act-tag {
+  font-size: 8px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.act-panel.one   .act-tag { color: var(--teal); }
+.act-panel.two   .act-tag { color: var(--gold); }
+.act-panel.three .act-tag { color: var(--coral); }
+
+.act-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.act-subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--dim);
+  margin-top: 4px;
+}
+
+.act-divider {
+  height: 1px;
+  background: var(--ghost);
+  margin: 16px 0;
+}
+
+.act-detail {
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--dim);
+}
+
+.act-detail strong {
+  color: var(--white);
+  font-weight: 400;
+}
+
+.act-detail .marker {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.act-panel.one   .marker { background: var(--teal); }
+.act-panel.two   .marker { background: var(--gold); }
+.act-panel.three .marker { background: var(--coral); }
+
+/* ── INVERSION DIAGRAM ── */
+.inversion-section {
+  margin-bottom: 56px;
+}
+
+.inversion-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 40px 0;
+  position: relative;
+}
+
+.inversion-node {
+  text-align: center;
+  width: 220px;
+}
+
+.inode-label {
+  font-size: 8.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dimmer);
+  margin-bottom: 10px;
+}
+
+.inode-text {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.inode-text.origin { color: var(--dim); font-style: italic; }
+.inode-text.target { color: var(--white); }
+
+.inversion-bridge {
+  flex: 1;
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bridge-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--dimmer), var(--gold), var(--dimmer));
+}
+
+.bridge-label {
+  position: absolute;
+  background: var(--bg);
+  padding: 4px 12px;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(212,168,83,0.3);
+  border-radius: 2px;
+}
+
+/* ── KEY SIGNATURE ── */
+.key-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--ghost);
+  margin-bottom: 56px;
+}
+
+.key-card {
+  background: var(--bg);
+  padding: 20px 22px;
+}
+
+.key-card-label {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dimmer);
+  margin-bottom: 10px;
+}
+
+.key-card-value {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.key-card-note {
+  font-size: 9.5px;
+  color: var(--dim);
+  line-height: 1.5;
+}
+
+/* ── FOOTER AXIOM ── */
+.axiom {
+  text-align: center;
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--ghost);
+}
+
+.axiom-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--dimmer);
+  letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+
+<!-- STARS -->
+<div class="stars" id="stars"></div>
+
+<div class="content">
+
+  <!-- TITLE -->
+  <div class="title-block">
+    <div class="main-title">
+      Galaxies<span class="slash">/</span><span class="ghost-word">Ghost Particle</span>
+    </div>
+    <div class="subtitle">A Unified Three-Act Compositional Map &nbsp;·&nbsp; Aaron Mellinger</div>
+    <div class="inversion-line">
+      From <span>theology as wonder</span> toward <span>epistemology as wonder</span> — same current, new wire
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline-section">
+    <div class="timeline-label">Arc Timeline</div>
+    <div class="timeline">
+      <div class="act-zone one"><div class="act-num">Act I — Foundation</div></div>
+      <div class="act-zone two"><div class="act-num">Act II — Emergence</div></div>
+      <div class="act-zone three"><div class="act-num">Act III — Inversion Complete</div></div>
+
+      <svg class="wave-svg" viewBox="0 0 1400 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#5ECFCA" stop-opacity="0.5"/>
+            <stop offset="50%"  stop-color="#D4A853" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#E87060" stop-opacity="0.7"/>
+          </linearGradient>
+          <linearGradient id="fillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#5ECFCA" stop-opacity="0.04"/>
+            <stop offset="50%"  stop-color="#D4A853" stop-opacity="0.06"/>
+            <stop offset="100%" stop-color="#E87060" stop-opacity="0.08"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Ghost Particle triplet underpulse -->
+        <path d="M0,100 
+          Q23,85 35,100 Q47,115 58,100 Q70,85 82,100 Q93,115 105,100
+          Q117,85 128,100 Q140,115 152,100 Q163,85 175,100 Q187,115 198,100
+          Q210,85 222,100 Q233,115 245,100 Q257,85 268,100 Q280,115 292,100
+          Q303,85 315,100 Q327,115 338,100 Q350,85 362,100 Q373,115 385,100
+          Q397,85 408,100 Q420,115 432,100 Q443,85 455,100 Q467,115 478,100
+          Q490,85 495,100"
+          fill="none" stroke="rgba(94,207,202,0.15)" stroke-width="1.5"/>
+
+        <!-- Galaxies vocal emergence -->
+        <path d="M467,110 
+          Q530,95 560,80 Q590,65 620,55
+          Q680,38 730,35
+          Q800,30 850,28
+          Q920,25 980,22
+          Q1060,18 1140,15
+          Q1230,12 1320,10 Q1380,8 1400,8"
+          fill="none" stroke="rgba(212,168,83,0.4)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+        <!-- Main arc -->
+        <path d="M0,125
+          C100,122 200,118 350,112
+          C440,108 460,100 500,80
+          C560,52 640,35 730,28
+          C850,20 980,14 1150,10
+          C1280,7 1350,6 1400,5
+          L1400,140 L0,140 Z"
+          fill="url(#fillGrad)"/>
+
+        <path d="M0,125
+          C100,122 200,118 350,112
+          C440,108 460,100 500,80
+          C560,52 640,35 730,28
+          C850,20 980,14 1150,10
+          C1280,7 1350,6 1400,5"
+          fill="none" stroke="url(#waveGrad)" stroke-width="2"/>
+
+        <!-- Guitar entry marker -->
+        <line x1="700" y1="20" x2="700" y2="140" stroke="rgba(232,112,96,0.25)" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="704" y="38" fill="rgba(232,112,96,0.7)" font-family="Share Tech Mono" font-size="8" letter-spacing="0.1em">GUITAR ENTERS</text>
+
+        <!-- Act dividers -->
+        <line x1="466" y1="0" x2="466" y2="140" stroke="rgba(240,238,232,0.06)" stroke-width="1"/>
+        <line x1="932" y1="0" x2="932" y2="140" stroke="rgba(240,238,232,0.06)" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- LAYER TRACKS -->
+  <div class="timeline-label">Layer Anatomy</div>
+  <div class="tracks">
+
+    <div class="track-row">
+      <div class="track-label">Ghost Particle</div>
+      <div class="track-body">
+        <div class="track-fill" style="left:0; width:100%; background:rgba(94,207,202,0.12); border:1px solid rgba(94,207,202,0.2);">
+          <div class="triplet-marks" id="triplets"></div>
+        </div>
+        <div class="track-annotation" style="left:8px">Triplet foundation — continuous, unbroken</div>
+      </div>
+    </div>
+
+    <div class="track-row">
+      <div class="track-label">Vocals / Galaxies</div>
+      <div class="track-body">
+        <div class="track-fill" style="left:33.33%; width:66.67%; background:rgba(212,168,83,0.10); border:1px solid rgba(212,168,83,0.2);">
+          <div class="track-annotation" style="left:8px">Emerges through ghost particle bed</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track-row">
+      <div class="track-label">Live Guitar</div>
+      <div class="track-body">
+        <div class="track-fill" style="left:50%; width:50%; background:rgba(232,112,96,0.10); border:1px solid rgba(232,112,96,0.2);">
+          <div class="track-annotation" style="left:8px">New voice — synthesis point of both sources</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="track-row">
+      <div class="track-label">Inversion Arc</div>
+      <div class="track-body">
+        <svg width="100%" height="32" viewBox="0 0 900 32" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="invGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#5ECFCA" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#E87060" stop-opacity="0.7"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,28 C200,28 300,16 450,12 C600,8 700,4 900,2"
+            fill="none" stroke="url(#invGrad)" stroke-width="1.5" stroke-dasharray="5 3"/>
+          <text x="2" y="26" fill="rgba(94,207,202,0.5)" font-family="Share Tech Mono" font-size="7" letter-spacing="0.1em">theological</text>
+          <text x="810" y="12" fill="rgba(232,112,96,0.7)" font-family="Share Tech Mono" font-size="7" letter-spacing="0.1em">empirical</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- THREE ACTS -->
+  <div class="timeline-label" style="margin-bottom:20px">Act Architecture</div>
+  <div class="acts">
+
+    <div class="act-panel one">
+      <div class="act-watermark">I</div>
+      <div class="act-header">
+        <div class="act-tag">Act I — Foundation</div>
+        <div class="act-title">The Particle<br>Before the Galaxy</div>
+        <div class="act-subtitle">Ghost alone in the room</div>
+      </div>
+      <div class="act-divider"></div>
+      <div class="act-detail">
+        <div><span class="marker"></span><strong>Ghost Particle</strong> opens unaccompanied</div>
+        <div><span class="marker"></span>Triplet pulse establishes the <strong>field</strong></div>
+        <div><span class="marker"></span>Key center confirmed, no harmony yet</div>
+        <div><span class="marker"></span>The listener feels <strong>space before meaning</strong></div>
+        <br>
+        <div style="font-size:9px;font-style:italic;color:rgba(94,207,202,0.4)">
+          This is the universe before anyone named it.
+        </div>
+      </div>
+    </div>
+
+    <div class="act-panel two">
+      <div class="act-watermark">II</div>
+      <div class="act-header">
+        <div class="act-tag">Act II — Emergence</div>
+        <div class="act-title">Galaxies<br>Through the Particle</div>
+        <div class="act-subtitle">Voice arriving through field</div>
+      </div>
+      <div class="act-divider"></div>
+      <div class="act-detail">
+        <div><span class="marker"></span><strong>Vocals emerge</strong> through the triplet bed</div>
+        <div><span class="marker"></span>Original Galaxies lyrics, <strong>new meaning</strong></div>
+        <div><span class="marker"></span>The theological framing starts to <strong>dissolve</strong></div>
+        <div><span class="marker"></span>Listener hears the old shape, feels it <strong>shifting</strong></div>
+        <br>
+        <div style="font-size:9px;font-style:italic;color:rgba(212,168,83,0.4)">
+          Same words. Different gravity. The inversion is happening.
+        </div>
+      </div>
+    </div>
+
+    <div class="act-panel three">
+      <div class="act-watermark">III</div>
+      <div class="act-header">
+        <div class="act-tag">Act III — Resolution</div>
+        <div class="act-title">The Guitar<br>Names the Space</div>
+        <div class="act-subtitle">New voice, total synthesis</div>
+      </div>
+      <div class="act-divider"></div>
+      <div class="act-detail">
+        <div><span class="marker"></span><strong>Live guitar</strong> enters as a third voice</div>
+        <div><span class="marker"></span>Neither particle nor galaxy — <strong>witness</strong></div>
+        <div><span class="marker"></span>Empirical/epistemic argument <strong>complete</strong></div>
+        <div><span class="marker"></span>Wonder without a god. <strong>Larger</strong> for it.</div>
+        <br>
+        <div style="font-size:9px;font-style:italic;color:rgba(232,112,96,0.4)">
+          The flashlight realizes it is made of sunlight.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- INVERSION DIAGRAM -->
+  <div class="inversion-section">
+    <div class="timeline-label">The Inversion</div>
+    <div class="inversion-diagram">
+
+      <div class="inversion-node">
+        <div class="inode-label">Origin (2001)</div>
+        <div class="inode-text origin">
+          Awe directed<br>toward a source<br>outside the observer
+        </div>
+      </div>
+
+      <div class="inversion-bridge">
+        <div class="bridge-line"></div>
+        <div class="bridge-label">same current · new wire</div>
+      </div>
+
+      <div class="inversion-node" style="text-align:center;">
+        <div class="inode-label">The Music</div>
+        <div class="inode-text" style="color:var(--gold);font-family:var(--serif);font-size:22px;font-style:italic;">
+          Galaxies /Ghost Particle
+        </div>
+      </div>
+
+      <div class="inversion-bridge">
+        <div class="bridge-line"></div>
+        <div class="bridge-label">not loss · expansion</div>
+      </div>
+
+      <div class="inversion-node">
+        <div class="inode-label">Now</div>
+        <div class="inode-text">
+          Awe as the natural<br>output of looking<br>clearly at what is
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- KEY SIGNATURE CARDS -->
+  <div class="timeline-label" style="margin-bottom:20px">Key Parameters</div>
+  <div class="key-section">
+
+    <div class="key-card">
+      <div class="key-card-label">Shared Key Center</div>
+      <div class="key-card-value">Same key</div>
+      <div class="key-card-note">Ghost Particle and Galaxies occupy identical harmonic space. The merge is not a collision — it is a recognition.</div>
+    </div>
+
+    <div class="key-card">
+      <div class="key-card-label">Ghost Particle Rhythm</div>
+      <div class="key-card-value">Triplet-based</div>
+      <div class="key-card-note">The triplet pulse is the particle field — continuous, sub-beat, below the vocal grid. It doesn't compete. It is the substrate.</div>
+    </div>
+
+    <div class="key-card">
+      <div class="key-card-label">Guitar Role</div>
+      <div class="key-card-value">Third Voice</div>
+      <div class="key-card-note">Not decoration. Not solo. The guitar is the instrument that exists in the present — it cannot be from 2001. It is the now speaking back.</div>
+    </div>
+
+  </div>
+
+  <!-- AXIOM -->
+  <div class="axiom">
+    <div class="axiom-text">
+      "All that exists is information. May the best idea win."
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Generate stars
+const container = document.getElementById('stars');
+for (let i = 0; i < 180; i++) {
+  const s = document.createElement('div');
+  s.className = 'star';
+  const size = Math.random() < 0.85 ? 1 : (Math.random() < 0.7 ? 1.5 : 2);
+  s.style.cssText = `
+    width:${size}px; height:${size}px;
+    left:${Math.random()*100}%;
+    top:${Math.random()*100}%;
+    --dur:${2 + Math.random()*4}s;
+    --delay:${Math.random()*4}s;
+    --min:${0.05 + Math.random()*0.1};
+    --max:${0.3 + Math.random()*0.5};
+  `;
+  container.appendChild(s);
+}
+
+// Generate triplet marks
+const triplets = document.getElementById('triplets');
+for (let i = 0; i < 80; i++) {
+  const m = document.createElement('div');
+  m.className = 'triplet-mark';
+  m.style.opacity = 0.3 + Math.random() * 0.5;
+  m.style.height = (40 + Math.random() * 40) + '%';
+  triplets.appendChild(m);
+}
+</script>
+</body>
+</html>

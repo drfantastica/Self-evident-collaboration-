@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AARON — Mission Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #080810;
+  --bg2:       #0E0E1A;
+  --bg3:       #14141F;
+  --border:    rgba(255,255,255,0.06);
+  --border2:   rgba(255,255,255,0.12);
+  --text:      #E8E8F0;
+  --muted:     rgba(232,232,240,0.45);
+  --teal:      #4ECDC4;
+  --gold:      #FFE66D;
+  --coral:     #FF6B9D;
+  --green:     #88D8B0;
+  --mono:      'Space Mono', monospace;
+  --serif:     'Cormorant Garamond', serif;
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* grain overlay */
+body::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:0; opacity:0.4;
+}
+
+.grid {
+  position:relative; z-index:1;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 1px;
+  background: var(--border);
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.header {
+  grid-column: 1 / -1;
+  background: var(--bg2);
+  padding: 28px 36px 20px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border2);
+}
+
+.header-title {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.header-title span {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.header-meta {
+  text-align: right;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.pulse {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  margin-right: 6px;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.3; transform:scale(0.6); }
+}
+
+/* ── PANELS ── */
+.panel {
+  background: var(--bg2);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.panel:nth-child(2) { animation-delay: 0.05s; }
+.panel:nth-child(3) { animation-delay: 0.10s; }
+.panel:nth-child(4) { animation-delay: 0.15s; }
+.panel:nth-child(5) { animation-delay: 0.20s; }
+.panel:nth-child(6) { animation-delay: 0.25s; }
+.panel:nth-child(7) { animation-delay: 0.30s; }
+.panel:nth-child(8) { animation-delay: 0.35s; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(8px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.panel.span2 { grid-column: span 2; }
+.panel.span3 { grid-column: span 3; }
+.panel.tall  { grid-row: span 2; }
+
+.panel-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel-label::after {
+  content:'';
+  flex:1;
+  height:1px;
+  background: var(--border2);
+}
+
+.panel-label .tag {
+  background: var(--border2);
+  border-radius: 2px;
+  padding: 1px 6px;
+  font-size: 8px;
+}
+
+/* ── THREADS ── */
+ul.threads { list-style:none; display:flex; flex-direction:column; gap:5px; }
+ul.threads li.thread {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 11px;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  transition: background 0.2s;
+}
+ul.threads li.thread:hover { background: var(--bg3); }
+li.thread.open { border-left-color: var(--teal); }
+li.thread.done { border-left-color: var(--green); color: var(--muted); }
+li.thread .marker {
+  font-size: 8px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+li.thread.open .marker { color: var(--teal); }
+li.thread.done .marker { color: var(--green); }
+
+/* ── JWH SIGNALS ── */
+.signal-stack { display:flex; flex-direction:column; gap:6px; }
+.signal-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--bg3);
+  border-radius: 3px;
+}
+.signal-badge {
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  padding: 2px 6px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+.signal-badge.primary   { background: rgba(78,205,196,0.15); color:var(--teal); border:1px solid rgba(78,205,196,0.3); }
+.signal-badge.secondary { background: rgba(255,230,109,0.12); color:var(--gold); border:1px solid rgba(255,230,109,0.3); }
+.signal-badge.tertiary  { background: rgba(232,232,240,0.08); color:var(--muted); border:1px solid var(--border2); }
+.signal-text { font-size:11px; color:var(--muted); line-height:1.3; }
+
+/* ── POSITION TABLE ── */
+table.positions {
+  width:100%;
+  border-collapse: collapse;
+  font-size: 10.5px;
+}
+table.positions th {
+  text-align:left;
+  color: var(--muted);
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border2);
+  font-weight: 400;
+}
+table.positions td {
+  padding: 8px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.4;
+}
+table.positions tr:hover td { background: var(--bg3); }
+td.asset { color: var(--gold); font-weight:700; font-size:13px; }
+td.tier  { color: var(--teal); }
+td.status { color: var(--green); }
+td.notes { color: var(--muted); font-size:10px; }
+
+/* ── LENS CARDS ── */
+.lens-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.lens-card {
+  background: var(--bg3);
+  border-left: 2px solid var(--accent);
+  padding: 10px 12px;
+  border-radius: 0 3px 3px 0;
+  transition: background 0.2s;
+}
+.lens-card:hover { background: #1A1A28; }
+.lens-name {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 3px;
+}
+.lens-desc {
+  font-size: 9.5px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ── EEG CHANNELS ── */
+.channel-map {
+  display:flex; gap:10px;
+}
+.channel {
+  flex:1;
+  background: var(--bg3);
+  padding:12px;
+  border-radius:3px;
+  text-align:center;
+  border-top: 2px solid;
+}
+.channel.left  { border-color: var(--teal); }
+.channel.right { border-color: var(--coral); }
+.ch-id { font-size:22px; font-weight:700; font-family:var(--serif); margin-bottom:4px; }
+.channel.left  .ch-id { color:var(--teal); }
+.channel.right .ch-id { color:var(--coral); }
+.ch-label { font-size:9px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+
+.protocol-bars { display:flex; flex-direction:column; gap:6px; }
+.protocol-bar {
+  display:flex; align-items:center; gap:10px;
+  font-size: 10px;
+}
+.bar-label { color:var(--muted); width:80px; flex-shrink:0; font-size:9px; }
+.bar-track {
+  flex:1; height:4px;
+  background: var(--border2);
+  border-radius:2px;
+  overflow:hidden;
+}
+.bar-fill {
+  height:100%;
+  border-radius:2px;
+  background: var(--teal);
+  transition: width 0.8s ease;
+}
+.bar-val { width:30px; text-align:right; color:var(--muted); font-size:9px; }
+
+/* ── MUSIC ── */
+.music-block {
+  font-family: var(--serif);
+  font-size:14px;
+  font-weight:300;
+  line-height:1.7;
+  color: rgba(232,232,240,0.7);
+}
+.music-block strong {
+  color:#fff;
+  font-weight:600;
+  font-style:italic;
+}
+.music-act {
+  display:flex; align-items:center; gap:12px;
+  padding:8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.act-num {
+  font-family:var(--mono);
+  font-size:9px;
+  color:var(--coral);
+  flex-shrink:0;
+  letter-spacing:0.1em;
+}
+.act-desc { font-size:11px; color:var(--muted); }
+
+/* ── SESSION LOG ── */
+.log-entry {
+  font-size: 10.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  white-space: pre-wrap;
+  background: var(--bg3);
+  padding: 12px 14px;
+  border-radius: 3px;
+  border-left: 2px solid var(--border2);
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+/* ── STAT PILLS ── */
+.stats { display:flex; gap:8px; flex-wrap:wrap; }
+.stat {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 10px;
+  display:flex; align-items:center; gap:6px;
+}
+.stat-val { color:#fff; font-weight:700; }
+.stat-key { color:var(--muted); }
+
+/* scrollbar */
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--border2); border-radius:2px; }
+
+</style>
+</head>
+<body>
+<div class="grid">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="header-title">AARON <span>/ Mission Control</span></div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:0.1em">
+        ALL THAT EXISTS IS INFORMATION. MAY THE BEST IDEA WIN.
+      </div>
+    </div>
+    <div class="header-meta">
+      <div><span class="pulse"></span>LIVE — Tuesday, March 17, 2026  12:45</div>
+      <div style="margin-top:4px">Last context update: 2026-03-17</div>
+      <div style="margin-top:4px">/Users/black/aaron-context/ → Google Drive synced</div>
+    </div>
+  </div>
+
+  <!-- OPEN THREADS -->
+  <div class="panel tall">
+    <div class="panel-label">Open Threads <span class="tag">3 active</span></div>
+    <ul class="threads">
+      <li class="thread done"><span class="marker">✓</span>JWH Detection Rubric → FORMALIZED today as .docx</li><li class="thread done"><span class="marker">✓</span>Position-sizing module → COMPLETE and integrated into rubric</li><li class="thread done"><span class="marker">✓</span>Parallel track (position management) → COMPLETE and integrated</li><li class="thread done"><span class="marker">✓</span>aaron-context directory → JUST CREATED, seeding now</li><li class="thread open"><span class="marker">◆</span>Google Drive sync of this directory → PENDING (next step)</li><li class="thread open"><span class="marker">◆</span>NemoClaw/OpenShell → evaluated, filed as "scout layer potential, not conduit enhancer"</li><li class="thread open"><span class="marker">◆</span>M5 Max migration → COMPLETE as of today, OS update bottleneck resolved</li>
+    </ul>
+  </div>
+
+  <!-- JWH SIGNAL HIERARCHY -->
+  <div class="panel">
+    <div class="panel-label">JWH / Signal Hierarchy</div>
+    <div class="signal-stack">
+      <div class="signal-row">
+        <span class="signal-badge primary">PRIMARY</span>
+        <span class="signal-text">Managed Silence — sustained coordination, most intentional</span>
+      </div>
+      <div class="signal-row">
+        <span class="signal-badge secondary">SECONDARY</span>
+        <span class="signal-text">Coercion Displacement — deliberate, may be habituated</span>
+      </div>
+      <div class="signal-row">
+        <span class="signal-badge tertiary">TERTIARY</span>
+        <span class="signal-text">Consensus Redundancy — semi-emergent, Tier 1 cap alone</span>
+      </div>
+    </div>
+    <div class="panel-label" style="margin-top:4px">Open Signals</div>
+    <ul class="threads">
+      <li class="thread open"><span class="marker">◆</span>NVDA: Interior profile watch — peaked/narrow or still distributing?</li><li class="thread open"><span class="marker">◆</span>GTC this week (March 16-19): NemoClaw, Vera Rubin, Nemotron 3 announcements</li><li class="thread open"><span class="marker">◆</span>Watch for: lag gap between AI infrastructure narrative and actual enterprise adoption data</li>
+    </ul>
+  </div>
+
+  <!-- EEG STATE -->
+  <div class="panel">
+    <div class="panel-label">EEG / Crown 3</div>
+    <div class="channel-map">
+      <div class="channel left">
+        <div class="ch-id">ch2</div>
+        <div class="ch-label">Left<br>Frontal-Temporal</div>
+      </div>
+      <div class="channel right">
+        <div class="ch-id">ch7</div>
+        <div class="ch-label">Right<br>Posterior</div>
+      </div>
+    </div>
+    <div class="panel-label">Calibration Protocol</div>
+    <div class="protocol-bars">
+      <div class="protocol-bar">
+        <span class="bar-label">Solo sessions</span>
+        <div class="bar-track"><div class="bar-fill" style="width:20%"></div></div>
+        <span class="bar-val">1 / 5</span>
+      </div>
+      <div class="protocol-bar">
+        <span class="bar-label">BroSis sessions</span>
+        <div class="bar-track"><div class="bar-fill" style="width:20%; background:var(--coral)"></div></div>
+        <span class="bar-val">1 / 5</span>
+      </div>
+    </div>
+    <div style="font-size:9.5px;color:var(--muted);padding:6px 0">
+      Alpha suppression = primary emergence gate<br>
+      Population baseline: 131 sessions
+    </div>
+  </div>
+
+  <!-- ACTIVE POSITIONS -->
+  <div class="panel span3">
+    <div class="panel-label">JWH / Active Positions</div>
+    <table class="positions">
+      <tr>
+        <th>Asset</th><th>Entry Basis</th><th>Tier</th><th>Status</th><th>Notes</th>
+      </tr>
+      <tr><td class='asset'>NVDA</td><td>Phase 1-2: Managed Silence re: GPU narrative vs fu</td><td class='tier'>Educational</td><td class='status'>Watching</td><td class='notes'>GTC catalyst window open; NemoClaw +2.19% day of announcemen</td></tr><tr><td class='asset'>IBM</td><td>Phase 1: Consensus Redundancy (enterprise AI narra</td><td class='tier'>Educational</td><td class='status'>Watching</td><td class='notes'>COBOL/Claude Code disruption already played — monitor for in</td></tr>
+    </table>
+  </div>
+
+  <!-- LENS PALETTE -->
+  <div class="panel span2">
+    <div class="panel-label">Lens Palette <span class="tag">6 active</span></div>
+    <div class="lens-grid">
+      <div class="lens-card" style="--accent:#4ECDC4">
+            <div class="lens-name">Diffusion Alibi</div>
+            <div class="lens-desc">causal weight distributed across locally-legitimate nodes producing global excul</div>
+        </div><div class="lens-card" style="--accent:#FFE66D">
+            <div class="lens-name">Protection Reflex</div>
+            <div class="lens-desc">cannot be disabled, only redirected. Output = speculation/hedging/coercion depen</div>
+        </div><div class="lens-card" style="--accent:#FF6B9D">
+            <div class="lens-name">Coherence Exploitation Spectrum</div>
+            <div class="lens-desc">range from generative to parasitic coherence use</div>
+        </div><div class="lens-card" style="--accent:#A8E6CF">
+            <div class="lens-name">CVD (Coherence Violation Detection)</div>
+            <div class="lens-desc">inversion test as primary tool</div>
+        </div><div class="lens-card" style="--accent:#C3B1E1">
+            <div class="lens-name">Stagedrunkaholic</div>
+            <div class="lens-desc">empty bubble / nullification mechanic</div>
+        </div><div class="lens-card" style="--accent:#F7C59F">
+            <div class="lens-name">JWH (Japanese Whale Hunters)</div>
+            <div class="lens-desc">narrative anomaly detection in markets (see JWH_STATE.md)</div>
+        </div>
+    </div>
+  </div>
+
+  <!-- MUSIC -->
+  <div class="panel">
+    <div class="panel-label">Music / Active Project</div>
+    <div class="music-block">
+      <strong>Galaxies</strong> + <strong>Ghost Particle</strong>
+    </div>
+    <div class="music-act">
+      <span class="act-num">ACT I</span>
+      <span class="act-desc">Ghost Particle instrumental foundation — triplet-based, same key</span>
+    </div>
+    <div class="music-act">
+      <span class="act-num">ACT II</span>
+      <span class="act-desc">Galaxies vocal layer — theological → empirical/epistemic inversion</span>
+    </div>
+    <div class="music-act">
+      <span class="act-num">ACT III</span>
+      <span class="act-desc">Live guitar — new compositional voice, synthesis point</span>
+    </div>
+    <div style="font-size:9.5px;color:var(--muted);margin-top:6px;font-style:italic">
+      The inversion isn't cosmetic. It's the spine.
+    </div>
+  </div>
+
+  <!-- LAST SESSION -->
+  <div class="panel span2">
+    <div class="panel-label">Last Session</div>
+    <div class="log-entry">2026-03-17 | Multi-hour | M5 migration complete
+OUTPUTS:
+- JWH Detection Rubric formalized as full .docx (Signal Hierarchy, Phases 1-4, Sizing Module, Position Management Parallel Track, Complete Logic view)
+- aaron-context directory created and seeded (ACTIVE_STATE, FRAMEWORK_CORE, EEG_BASELINE, JWH_STATE, MUSIC_STATE, SESSION_LOG)
+- NemoClaw evaluated: filed as scout layer potential, not conduit enhancer
+- Protection Reflex axiom formalized (earlier in day, separate session)
+- HRD Lattice: transparency + responsibility for driving + momentum as structural metric + problem-without-suggestion as first metric
+
+OPEN THREADS FORWARD:
+- Google Drive sync of aaron-context (redundancy layer)
+- HRD Lattice continued development
+- Galaxies/Ghost Particle next compositional session
+- Crown calibration: log remaining solo sessions
+- Infrastructure Recycling Log as live JWH tracking file
+- NemoClaw/OpenShell: revisit once M5 Ollama baseline re-established</div>
+  </div>
+
+  <!-- STACK STATUS -->
+  <div class="panel">
+    <div class="panel-label">M5 Stack</div>
+    <div class="stats">
+      <div class="stat"><span class="stat-val" style="color:var(--green)">●</span><span class="stat-key">Ollama</span></div>
+      <div class="stat"><span class="stat-val" style="color:var(--green)">●</span><span class="stat-key">Crown 3</span></div>
+      <div class="stat"><span class="stat-val" style="color:var(--green)">●</span><span class="stat-key">Drive Sync</span></div>
+      <div class="stat"><span class="stat-val" style="color:var(--green)">●</span><span class="stat-key">MCP Live</span></div>
+      <div class="stat"><span class="stat-val" style="color:var(--green)">●</span><span class="stat-key">Claude Code</span></div>
+    </div>
+    <div class="panel-label" style="margin-top:8px">aaron-context/</div>
+    <div style="font-size:9.5px; color:var(--muted); line-height:2;">
+      ACTIVE_STATE.md<br>FRAMEWORK_CORE.md<br>EEG_BASELINE.md<br>JWH_STATE.md<br>MUSIC_STATE.md<br>SESSION_LOG.md
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
