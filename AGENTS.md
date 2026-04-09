@@ -155,6 +155,19 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 
 **Tip:** Batch similar periodic checks into `HEARTBEAT.md` instead of creating multiple cron jobs. Use cron for precise schedules and standalone tasks.
 
+### 🚨 Context Overflow Rules — Read This
+
+**Reading Slack channel history in the main session WILL cause context overflow and a stuck session.**
+
+On 2026-04-09 a main session loaded Slack history to check for pending tasks → hit 44 messages → prompt exceeded qwen3:32b's 32K window → auto-compaction failed (already compacted) → session stuck for 2+ hours.
+
+**Hard rules:**
+
+1. **Never read Slack channel history in the main session.** Always use an isolated cron session or `--session isolated --light-context` flag.
+2. **Never read `conversations.json` or large corpus files in the main session.** Run data tasks (e.g. `starfield_mine.py`) as isolated processes via `python3` subprocess or cron.
+3. **If you're in the main session and need to check Slack for tasks:** don't. Read `memory/pending-for-sis.md` and STARFIELD.md instead — Sis keeps those updated. Only read Slack directly from an isolated session.
+4. **Main session context budget:** treat 20K tokens as a soft ceiling. If a task will push past it, spawn it as isolated.
+
 **Things to check (rotate through these, 2-4 times per day):**
 
 - **Emails** - Any urgent unread messages?
@@ -266,3 +279,20 @@ collab-signal amp pi 0.9 "Pi: [brief note]"
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+
+---
+
+## Starfield Protocol
+
+After every compaction, and whenever `/new` or `/reset` is issued, run:
+```bash
+bash /Users/black/aaron-context/starfield-writer.sh
+```
+
+This keeps Sis's STARFIELD.md current so she can orient instantly in new sessions.
+
+If you have tasks to hand off to Sis, write them to `memory/pending-for-sis.md`
+before the session closes. Starfield writer will pick them up automatically.
+
+The dreaming cron at 3am should also run the starfield writer after memory consolidation.
