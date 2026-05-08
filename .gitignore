@@ -9,3 +9,16 @@ bridge/claude_cookies.json
 memory-export-2026-03-17/
 ignition
 IGNITION_LIVE.md
+
+# Heavy binary captures and vector stores — never commit
+s4-captions/
+history-export/
+memory/.dreams/
+memory/chroma_db/
+memory/dreaming/
+memory/pi_response_*.png
+cc_capture_*.jsonl
+*.wav
+*.mp4
+*.mov
+*.flac

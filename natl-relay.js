@@ -7,9 +7,34 @@
 
 const http = require('http');
 const https = require('https');
+const fs = require('fs');
+const path = require('path');
+
+// Minimal env loader (no dotenv dep). Reads .env.local from script dir.
+(function loadEnvLocal() {
+  const envFile = path.join(__dirname, '.env.local');
+  if (!fs.existsSync(envFile)) return;
+  for (const line of fs.readFileSync(envFile, 'utf8').split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const eq = trimmed.indexOf('=');
+    if (eq < 0) continue;
+    const key = trimmed.slice(0, eq).trim();
+    let val = trimmed.slice(eq + 1).trim();
+    if ((val.startsWith('"') && val.endsWith('"')) ||
+        (val.startsWith("'") && val.endsWith("'"))) {
+      val = val.slice(1, -1);
+    }
+    if (!(key in process.env)) process.env[key] = val;
+  }
+})();
 
 const PORT = 7778;
-const BOT_TOKEN = '***REDACTED-OLD-TOKEN***';
+const BOT_TOKEN = process.env.SLACK_BOT_TOKEN;
+if (!BOT_TOKEN) {
+  console.error('FATAL: SLACK_BOT_TOKEN not set. Add to .env.local or environment.');
+  process.exit(1);
+}
 
 // In-memory EEG state — written by crown-stream-relay.mjs via POST /eeg-state
 // Read by AVP passthrough or any local consumer via GET /eeg-state
