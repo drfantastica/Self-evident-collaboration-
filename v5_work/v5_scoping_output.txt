@@ -1,0 +1,52 @@
+Fetching AME 2020 mass table...
+  Downloaded: 472648 bytes
+  Data starts at line 36
+  Sample line: '0  1    1    0    1  n         8071.31806     0.00044       0.0        0.0     B-    782.3470     0.'
+  Parsed 3558 nuclide records
+
+  Peak-stability isotope identified for 119 elements
+  Sample Z=26: {'N': 32, 'Z': 26, 'A': 58, 'el': 'Fe', 'ba_kev': 8792.2534}
+  Sample Z=82: {'N': 120, 'Z': 82, 'A': 202, 'el': 'Pb', 'ba_kev': 7882.1505}
+
+  117 ratios computed (excluding H)
+
+=== max_denom = 3 ===
+  Observed mean dist:  0.06398
+  Null mean (uniform): 0.04535 +/- 0.00205
+  Z-score: 9.103
+  P(null <= obs): 1.0000
+
+=== max_denom = 5 ===
+  Observed mean dist:  0.02354
+  Null mean (uniform): 0.02316 +/- 0.00122
+  Z-score: 0.315
+  P(null <= obs): 0.6270
+
+=== max_denom = 8 ===
+  Observed mean dist:  0.01075
+  Null mean (uniform): 0.01284 +/- 0.00085
+  Z-score: -2.447
+  P(null <= obs): 0.0065  <-- significant clustering
+
+=== max_denom = 13 ===
+  Observed mean dist:  0.00396
+  Null mean (uniform): 0.00521 +/- 0.00042
+  Z-score: -3.002
+  P(null <= obs): 0.0000  <-- significant clustering
+
+
+=== Specific rationals (max_denom=8, within 0.01) ===
+       3/7 : 35 hits
+       2/5 : 31 hits
+       1/2 : 4 hits
+
+=== Z/A across stability valley ===
+  Z=  2 A=  4: Z/A=0.5000  near 1/2=0.5000  (d=0.0000)
+  Z=  8 A= 16: Z/A=0.5000  near 1/2=0.5000  (d=0.0000)
+  Z= 20 A= 46: Z/A=0.4348  near 3/7=0.4286  (d=0.0062)
+  Z= 26 A= 58: Z/A=0.4483  near 3/7=0.4286  (d=0.0197)
+  Z= 50 A=116: Z/A=0.4310  near 3/7=0.4286  (d=0.0025)
+  Z= 82 A=202: Z/A=0.4059  near 2/5=0.4000  (d=0.0059)
+  Z= 92 A=218: Z/A=0.4220  near 3/7=0.4286  (d=0.0066)
+
+=== Done ===

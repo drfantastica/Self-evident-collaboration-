@@ -131,6 +131,16 @@ Test all channels: `jfu-wire --test`
 
 ## OpenClaw
 - **Config:** ~/.openclaw/openclaw.json
+- **⚠️ NEVER write openclaw.json directly.** Any partial write (even a valid single-key change) will strip all other top-level keys and brick OpenClaw on restart. Use the safe wrapper instead:
+  ```
+  /Users/black/latch-env/bin/python3 /Users/black/aaron-context/scripts/openclaw_config_set.py <key.path> <value>
+  # Examples:
+  # openclaw_config_set.py 'acp.defaultAgent' 'latch'
+  # openclaw_config_set.py 'agents.defaults.timeoutSeconds' 120
+  ```
+- **Required keys (must always be present):** meta, wizard, acp, models, agents, channels, gateway, plugins
+- **Config reload:** `kill -USR1 <gateway-pid>` triggers a FULL process restart (not hot reload) — do not use while Latch has an active task. Wait for idle first.
+- **Recovery if config is clobbered:** `cp ~/.openclaw/openclaw.json.bak ~/.openclaw/openclaw.json` → re-apply intentional changes via wrapper → `launchctl kickstart -k gui/$(id -u)/ai.openclaw.gateway`
 - **Workspace state:** ~/.openclaw/.openclaw/workspace-state.json (via aaron-context)
 - **Primary model:** mlx/qwen3-32b (alias: local)
 - **Max concurrent agents:** 2 (subagents: 4)

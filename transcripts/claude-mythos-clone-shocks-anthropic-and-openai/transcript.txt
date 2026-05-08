@@ -1,0 +1,697 @@
+# Claude Mythos Clone Shocks Anthropic and OpenAI
+# Source: https://www.youtube.com/watch?v=cKFITKsb7M8
+# Transcribed: 2026-04-25T08:06:05.218880
+
+All [music] right. So, something pretty
+All [music] right. So, something pretty
+All [music] right. So, something pretty interesting is happening right now in
+interesting is happening right now in
+interesting is happening right now in the AI space, and it's not coming from a
+the AI space, and it's not coming from a
+the AI space, and it's not coming from a big lab release, not from OpenAI, not
+big lab release, not from OpenAI, not
+big lab release, not from OpenAI, not from Anthropic, but from a 22-year-old
+from Anthropic, but from a 22-year-old
+from Anthropic, but from a 22-year-old who basically looked at one of the most
+who basically looked at one of the most
+who basically looked at one of the most secretive architectures in the industry
+secretive architectures in the industry
+secretive architectures in the industry and tried to rebuild it from scratch.
+and tried to rebuild it from scratch.
+and tried to rebuild it from scratch. And the wild part is the idea actually
+And the wild part is the idea actually
+And the wild part is the idea actually makes sense.
+makes sense.
+makes sense. There's been a lot of talk around Claude
+There's been a lot of talk around Claude
+There's been a lot of talk around Claude Mythos, this supposed architecture that
+Mythos, this supposed architecture that
+Mythos, this supposed architecture that people have been hinting at as something
+people have been hinting at as something
+people have been hinting at as something different, something potentially more
+different, something potentially more
+different, something potentially more powerful, maybe even too dangerous,
+powerful, maybe even too dangerous,
+powerful, maybe even too dangerous, depending on who you listen to.
+depending on who you listen to.
+depending on who you listen to. &gt;&gt; [music]
+&gt;&gt; [music]
+&gt;&gt; [music] &gt;&gt; No official paper, no full breakdown
+&gt;&gt; No official paper, no full breakdown
+&gt;&gt; No official paper, no full breakdown from Anthropic, just fragments,
+from Anthropic, just fragments,
+from Anthropic, just fragments, speculation, and a lot of curiosity. So,
+speculation, and a lot of curiosity. So,
+speculation, and a lot of curiosity. So, what this guy, Kai Gomez, did is take
+what this guy, Kai Gomez, did is take
+what this guy, Kai Gomez, did is take all the public research, all the hints,
+all the public research, all the hints,
+all the public research, all the hints, all the patterns we're seeing across
+all the patterns we're seeing across
+all the patterns we're seeing across newer models, and he built something
+newer models, and he built something
+newer models, and he built something called Open Mythos. [music]
+called Open Mythos. [music]
+called Open Mythos. [music] Fully open source, implemented in
+Fully open source, implemented in
+Fully open source, implemented in PyTorch, and not as a copy of Mythos,
+PyTorch, and not as a copy of Mythos,
+PyTorch, and not as a copy of Mythos, but as a hypothesis. A testable one. And
+but as a hypothesis. A testable one. And
+but as a hypothesis. A testable one. And at the center of it is this idea called
+at the center of it is this idea called
+at the center of it is this idea called a recurrent depth transformer, or RDT.
+a recurrent depth transformer, or RDT.
+a recurrent depth transformer, or RDT. Now, this is where things start
+Now, this is where things start
+Now, this is where things start shifting. Most models you're familiar
+shifting. Most models you're familiar
+shifting. Most models you're familiar with, GPT-style models, Llama, Mistral,
+with, GPT-style models, Llama, Mistral,
+with, GPT-style models, Llama, Mistral, all of them follow the same basic
+all of them follow the same basic
+all of them follow the same basic structure. You stack layers.
+structure. You stack layers.
+structure. You stack layers. &gt;&gt; [music]
+&gt;&gt; [music]
+&gt;&gt; [music] &gt;&gt; Each layer has its own weights. You want
+&gt;&gt; Each layer has its own weights. You want
+&gt;&gt; Each layer has its own weights. You want more capability, you add more layers,
+more capability, you add more layers,
+more capability, you add more layers, more parameters, and suddenly you're at
+more parameters, and suddenly you're at
+more parameters, and suddenly you're at billions [music] or even trillions of
+billions [music] or even trillions of
+billions [music] or even trillions of parameters. RDT flips that. Instead of
+parameters. RDT flips that. Instead of
+parameters. RDT flips that. Instead of stacking more layers, you take a smaller
+stacking more layers, you take a smaller
+stacking more layers, you take a smaller set of layers and you run them multiple
+set of layers and you run them multiple
+set of layers and you run them multiple times.
+times.
+times. In Open Mythos, that loop runs up to 16
+In Open Mythos, that loop runs up to 16
+In Open Mythos, that loop runs up to 16 times. Same weights, reused again and
+times. Same weights, reused again and
+times. Same weights, reused again and again, refining the internal state each
+again, refining the internal state each
+again, refining the internal state each time. So, instead of a deeper model, you
+time. So, instead of a deeper model, you
+time. So, instead of a deeper model, you get deeper thinking during inference.
+get deeper thinking during inference.
+get deeper thinking during inference. The way it's structured is actually
+The way it's structured is actually
+The way it's structured is actually pretty clean. There's a prelude at the
+pretty clean. There's a prelude at the
+pretty clean. There's a prelude at the start, which encodes [music] the input
+start, which encodes [music] the input
+start, which encodes [music] the input once. Then you have the recurrent block,
+once. Then you have the recurrent block,
+once. Then you have the recurrent block, which is the core, looping multiple
+which is the core, looping multiple
+which is the core, looping multiple times. And finally, a coda at the end,
+times. And finally, a coda at the end,
+times. And finally, a coda at the end, which produces [music] the output.
+which produces [music] the output.
+which produces [music] the output. Inside that loop, something interesting
+Inside that loop, something interesting
+Inside that loop, something interesting happens. Each iteration updates the
+happens. Each iteration updates the
+happens. Each iteration updates the hidden state using a mix of three
+hidden state using a mix of three
+hidden state using a mix of three components: the previous [music] state,
+components: the previous [music] state,
+components: the previous [music] state, the original input signal, and the
+the original input signal, and the
+the original input signal, and the transformer computation itself. That
+transformer computation itself. That
+transformer computation itself. That reinjection of the input every loop is
+reinjection of the input every loop is
+reinjection of the input every loop is important, because otherwise the model
+important, because otherwise the model
+important, because otherwise the model would drift too far away from what it
+would drift too far away from what it
+would drift too far away from what it was supposed to process.
+was supposed to process.
+was supposed to process. And mathematically, it's expressed like
+And mathematically, it's expressed like
+And mathematically, it's expressed like this internal update rule, where the
+this internal update rule, where the
+this internal update rule, where the hidden state evolves step-by-step,
+hidden state evolves step-by-step,
+hidden state evolves step-by-step, controlled by learned matrices that
+controlled by learned matrices that
+controlled by learned matrices that decide how much past state and input to
+decide how much past state and input to
+decide how much past state and input to keep. Now, here's where it gets even
+keep. Now, here's where it gets even
+keep. Now, here's where it gets even more efficient. Instead of a standard
+more efficient. Instead of a standard
+more efficient. Instead of a standard feedforward layer, Open Mythos uses a
+feedforward layer, Open Mythos uses a
+feedforward layer, Open Mythos uses a mixture of experts setup, around 384
+mixture of experts setup, around 384
+mixture of experts setup, around 384 experts in total, each one specialized
+experts in total, each one specialized
+experts in total, each one specialized for different kinds of tasks. [music]
+for different kinds of tasks. [music]
+for different kinds of tasks. [music] But at any given time, only a small
+But at any given time, only a small
+But at any given time, only a small subset is active. In the case of Kimiko
+subset is active. In the case of Kimiko
+subset is active. In the case of Kimiko 2.6, for example, only eight experts are
+2.6, for example, only eight experts are
+2.6, for example, only eight experts are selected per input. So, you get this
+selected per input. So, you get this
+selected per input. So, you get this combination of breadth and depth. The
+combination of breadth and depth. The
+combination of breadth and depth. The MOE gives you access to a wide range of
+MOE gives you access to a wide range of
+MOE gives you access to a wide range of specialized knowledge, while the looping
+specialized knowledge, while the looping
+specialized knowledge, while the looping gives you deeper reasoning. And
+gives you deeper reasoning. And
+gives you deeper reasoning. And crucially, each loop can activate
+crucially, each loop can activate
+crucially, each loop can activate different [music] experts, so it's not
+different [music] experts, so it's not
+different [music] experts, so it's not just repeating the same computation over
+just repeating the same computation over
+just repeating the same computation over and over. That answers one of the
+and over. That answers one of the
+and over. That answers one of the biggest criticisms [music] people have
+biggest criticisms [music] people have
+biggest criticisms [music] people have when they first hear this idea. Running
+when they first hear this idea. Running
+when they first hear this idea. Running the same thing 16 times sounds
+the same thing 16 times sounds
+the same thing 16 times sounds inefficient. It sounds like wasted
+inefficient. It sounds like wasted
+inefficient. It sounds like wasted compute. But if each pass routes through
+compute. But if each pass routes through
+compute. But if each pass routes through different experts, [music] then each
+different experts, [music] then each
+different experts, [music] then each pass is actually adding new information.
+pass is actually adding new information.
+pass is actually adding new information. So, instead of stacking hundreds of
+So, instead of stacking hundreds of
+So, instead of stacking hundreds of layers with different weights, you reuse
+layers with different weights, you reuse
+layers with different weights, you reuse a smaller set of weights in a smarter
+a smaller set of weights in a smarter
+a smaller set of weights in a smarter way. And the results are kind of crazy.
+way. And the results are kind of crazy.
+way. And the results are kind of crazy. And honestly, that same idea of getting
+And honestly, that same idea of getting
+And honestly, that same idea of getting way more output from a smarter system
+way more output from a smarter system
+way more output from a smarter system instead of just brute forcing everything
+instead of just brute forcing everything
+instead of just brute forcing everything is exactly why tools like Higgsfield
+is exactly why tools like Higgsfield
+is exactly why tools like Higgsfield start getting interesting, too.
+start getting interesting, too.
+start getting interesting, too. Higgsfield is sponsoring today's video,
+Higgsfield is sponsoring today's video,
+Higgsfield is sponsoring today's video, and their marketing studio takes that
+and their marketing studio takes that
+and their marketing studio takes that same kind of compression and applies it
+same kind of compression and applies it
+same kind of compression and applies it to ad creation. Normally, making ads is
+to ad creation. Normally, making ads is
+to ad creation. Normally, making ads is still messy. You need a product angle, a
+still messy. You need a product angle, a
+still messy. You need a product angle, a script, footage, edits, maybe a creator,
+script, footage, edits, maybe a creator,
+script, footage, edits, maybe a creator, maybe a voiceover, and then you still
+maybe a voiceover, and then you still
+maybe a voiceover, and then you still need multiple versions to test. It turns
+need multiple versions to test. It turns
+need multiple versions to test. It turns into this whole chain of steps that eats
+into this whole chain of steps that eats
+into this whole chain of steps that eats time fast. Marketing studio collapses
+time fast. Marketing studio collapses
+time fast. Marketing studio collapses that down. You can paste in a product
+that down. You can paste in a product
+that down. You can paste in a product link or upload an image, and it turns
+link or upload an image, and it turns
+link or upload an image, and it turns that into multiple finished ad formats
+that into multiple finished ad formats
+that into multiple finished ad formats inside one workflow. So, instead of
+inside one workflow. So, instead of
+inside one workflow. So, instead of getting one generic output, you can
+getting one generic output, you can
+getting one generic output, you can generate UGC-style videos, tutorials,
+generate UGC-style videos, tutorials,
+generate UGC-style videos, tutorials, unboxings, product reviews, faster-cut
+unboxings, product reviews, faster-cut
+unboxings, product reviews, faster-cut promo ads, even more polished TV-style
+promo ads, even more polished TV-style
+promo ads, even more polished TV-style creatives, all built around the same
+creatives, all built around the same
+creatives, all built around the same product. And it runs on Seedance, too,
+product. And it runs on Seedance, too,
+product. And it runs on Seedance, too, which is what handles the motion, visual
+which is what handles the motion, visual
+which is what handles the motion, visual consistency, and overall quality.
+consistency, and overall quality.
+consistency, and overall quality. Honestly, I stopped reading AI news. I
+Honestly, I stopped reading AI news. I
+Honestly, I stopped reading AI news. I just watch AI Revolution, robots,
+just watch AI Revolution, robots,
+just watch AI Revolution, robots, models, the entire frontier covered
+models, the entire frontier covered
+models, the entire frontier covered daily.
+daily.
+daily. Go subscribe. You'll thank me.
+Go subscribe. You'll thank me.
+Go subscribe. You'll thank me. &gt;&gt; You can even use your own face or
+&gt;&gt; You can even use your own face or
+&gt;&gt; You can even use your own face or generate an avatar inside the platform,
+generate an avatar inside the platform,
+generate an avatar inside the platform, then keep that same identity across the
+then keep that same identity across the
+then keep that same identity across the different videos. So, the whole thing
+different videos. So, the whole thing
+different videos. So, the whole thing feels less like patching together random
+feels less like patching together random
+feels less like patching together random tools and more like actually having an
+tools and more like actually having an
+tools and more like actually having an ad engine. If you want to try Higgsfield
+ad engine. If you want to try Higgsfield
+ad engine. If you want to try Higgsfield Marketing Studio, the link is in the
+Marketing Studio, the link is in the
+Marketing Studio, the link is in the description. All right. Now, back to the
+description. All right. Now, back to the
+description. All right. Now, back to the video. There's research showing that a
+video. There's research showing that a
+video. There's research showing that a 770 million parameter RDT can match the
+770 million parameter RDT can match the
+770 million parameter RDT can match the performance of a 1.3 billion parameter
+performance of a 1.3 billion parameter
+performance of a 1.3 billion parameter standard transformer trained on the same
+standard transformer trained on the same
+standard transformer trained on the same data. That's almost half the parameters
+data. That's almost half the parameters
+data. That's almost half the parameters with similar output quality. That alone
+with similar output quality. That alone
+with similar output quality. That alone already challenges one of the core
+already challenges one of the core
+already challenges one of the core assumptions in AI scaling. But there's
+assumptions in AI scaling. But there's
+assumptions in AI scaling. But there's more.
+more.
+more. All of this reasoning happens entirely
+All of this reasoning happens entirely
+All of this reasoning happens entirely in latent space. There are no
+in latent space. There are no
+in latent space. There are no intermediate tokens generated during the
+intermediate tokens generated during the
+intermediate tokens generated during the process. The model doesn't think
+process. The model doesn't think
+process. The model doesn't think step-by-step in text like
+step-by-step in text like
+step-by-step in text like chain-of-thought prompting. It doesn't
+chain-of-thought prompting. It doesn't
+chain-of-thought prompting. It doesn't write out its reasoning and then read it
+write out its reasoning and then read it
+write out its reasoning and then read it back. It just
+back. It just
+back. It just thinks internally.
+thinks internally.
+thinks internally. 16 iterations all happening inside the
+16 iterations all happening inside the
+16 iterations all happening inside the hidden state vectors, and then at the
+hidden state vectors, and then at the
+hidden state vectors, and then at the end, you get a single output. This is
+end, you get a single output. This is
+end, you get a single output. This is fundamentally different from how most
+fundamentally different from how most
+fundamentally different from how most people understand AI reasoning today.
+people understand AI reasoning today.
+people understand AI reasoning today. Chain of thought is visible reasoning.
+Chain of thought is visible reasoning.
+Chain of thought is visible reasoning. RDT is hidden reasoning. And there's a
+RDT is hidden reasoning. And there's a
+RDT is hidden reasoning. And there's a big advantage here. Because it's
+big advantage here. Because it's
+big advantage here. Because it's operating in continuous space, it can
+operating in continuous space, it can
+operating in continuous space, it can represent multiple possible reasoning
+represent multiple possible reasoning
+represent multiple possible reasoning paths at once, something closer to a
+paths at once, something closer to a
+paths at once, something closer to a breadth-first search, all happening
+breadth-first search, all happening
+breadth-first search, all happening inside one forward pass.
+inside one forward pass.
+inside one forward pass. There are also experiments backing this
+There are also experiments backing this
+There are also experiments backing this up. One of them looks at systematic
+up. One of them looks at systematic
+up. One of them looks at systematic generalization. Basically, can the model
+generalization. Basically, can the model
+generalization. Basically, can the model handle combinations of knowledge it
+handle combinations of knowledge it
+handle combinations of knowledge it never saw during training? Standard
+never saw during training? Standard
+never saw during training? Standard transformers struggle with this. They
+transformers struggle with this. They
+transformers struggle with this. They tend to fail when the exact combination
+tend to fail when the exact combination
+tend to fail when the exact combination isn't in the data set. The recurrent
+isn't in the data set. The recurrent
+isn't in the data set. The recurrent transformer handled it. Another test
+transformer handled it. Another test
+transformer handled it. Another test looked at depth extrapolation. The model
+looked at depth extrapolation. The model
+looked at depth extrapolation. The model was trained on reasoning chains up to 20
+was trained on reasoning chains up to 20
+was trained on reasoning chains up to 20 steps, then tested on 30-step [music]
+steps, then tested on 30-step [music]
+steps, then tested on 30-step [music] problems. Standard transformers
+problems. Standard transformers
+problems. Standard transformers collapsed. The recurrent model just
+collapsed. The recurrent model just
+collapsed. The recurrent model just added more loops and kept going. So,
+added more loops and kept going. So,
+added more loops and kept going. So, instead of being limited by what it saw
+instead of being limited by what it saw
+instead of being limited by what it saw during training, it can extend its
+during training, it can extend its
+during training, it can extend its reasoning dynamically at inference time.
+reasoning dynamically at inference time.
+reasoning dynamically at inference time. That's a big deal. Because it suggests
+That's a big deal. Because it suggests
+That's a big deal. Because it suggests that the bottleneck in current models
+that the bottleneck in current models
+that the bottleneck in current models isn't knowledge, it's the ability to
+isn't knowledge, it's the ability to
+isn't knowledge, it's the ability to combine that knowledge effectively. And
+combine that knowledge effectively. And
+combine that knowledge effectively. And looping seems to unlock that. Now, of
+looping seems to unlock that. Now, of
+looping seems to unlock that. Now, of course, this kind of architecture comes
+course, this kind of architecture comes
+course, this kind of architecture comes with its own problems. One of the
+with its own problems. One of the
+with its own problems. One of the biggest is stability. If you keep
+biggest is stability. If you keep
+biggest is stability. If you keep looping, the hidden state can explode.
+looping, the hidden state can explode.
+looping, the hidden state can explode. Values grow uncontrollably, and the
+Values grow uncontrollably, and the
+Values grow uncontrollably, and the model breaks.
+model breaks.
+model breaks. &gt;&gt; [music]
+&gt;&gt; [music]
+&gt;&gt; [music] &gt;&gt; This is something that's been a known
+&gt;&gt; This is something that's been a known
+&gt;&gt; This is something that's been a known issue with recurrent architectures for a
+issue with recurrent architectures for a
+issue with recurrent architectures for a long time. Open Mythos addresses this
+long time. Open Mythos addresses this
+long time. Open Mythos addresses this using something called linear
+using something called linear
+using something called linear time-invariant injection, based on the
+time-invariant injection, based on the
+time-invariant injection, based on the Park K paper. Basically, it constrains
+Park K paper. Basically, it constrains
+Park K paper. Basically, it constrains the system so that the hidden state
+the system so that the hidden state
+the system so that the hidden state remains stable, no matter how many loops
+remains stable, no matter how many loops
+remains stable, no matter how many loops you run. There's also the opposite
+you run. There's also the opposite
+you run. There's also the opposite problem. Too many loops can lead to
+problem. Too many loops can lead to
+problem. Too many loops can lead to overthinking. The model goes past the
+overthinking. The model goes past the
+overthinking. The model goes past the correct answer and starts drifting into
+correct answer and starts drifting into
+correct answer and starts drifting into noise. To solve that, [music] they use
+noise. To solve that, [music] they use
+noise. To solve that, [music] they use adaptive computation time. Each token
+adaptive computation time. Each token
+adaptive computation time. Each token gets a learn signal that decides when to
+gets a learn signal that decides when to
+gets a learn signal that decides when to stop looping. Harder parts of the input
+stop looping. Harder parts of the input
+stop looping. Harder parts of the input get more compute. Easier parts stop
+get more compute. Easier parts stop
+get more compute. Easier parts stop early.
+early.
+early. &gt;&gt; [music]
+&gt;&gt; [music]
+&gt;&gt; [music] &gt;&gt; So, now you have dynamic reasoning depth
+&gt;&gt; So, now you have dynamic reasoning depth
+&gt;&gt; So, now you have dynamic reasoning depth per token.
+per token.
+per token. On top of that, there are depth-wise
+On top of that, there are depth-wise
+On top of that, there are depth-wise LoRA adapters. These are small parameter
+LoRA adapters. These are small parameter
+LoRA adapters. These are small parameter additions that slightly modify behavior
+additions that slightly modify behavior
+additions that slightly modify behavior at each loop step. So, even though the
+at each loop step. So, even though the
+at each loop step. So, even though the base weights are shared, each iteration
+base weights are shared, each iteration
+base weights are shared, each iteration [music] isn't identical. And then
+[music] isn't identical. And then
+[music] isn't identical. And then there's attention. Instead of standard
+there's attention. Instead of standard
+there's attention. Instead of standard attention, Open Mythos uses something
+attention, Open Mythos uses something
+attention, Open Mythos uses something similar to multi-latent attention from
+similar to multi-latent attention from
+similar to multi-latent attention from DeepSeek.
+DeepSeek.
+DeepSeek. &gt;&gt; [music]
+&gt;&gt; [music]
+&gt;&gt; [music] &gt;&gt; It compresses key-value pairs into a
+&gt;&gt; It compresses key-value pairs into a
+&gt;&gt; It compresses key-value pairs into a lower-rank representation, reducing
+lower-rank representation, reducing
+lower-rank representation, reducing memory usage by up to 10 to 20 times.
+memory usage by up to 10 to 20 times.
+memory usage by up to 10 to 20 times. So, you're getting efficiency across
+So, you're getting efficiency across
+So, you're getting efficiency across multiple layers of the system. Fewer
+multiple layers of the system. Fewer
+multiple layers of the system. Fewer parameters, less memory, more flexible
+parameters, less memory, more flexible
+parameters, less memory, more flexible reasoning. And all of this comes
+reasoning. And all of this comes
+reasoning. And all of this comes together into a pretty clear idea.
+together into a pretty clear idea.
+together into a pretty clear idea. Scaling might shift. Instead of training
+Scaling might shift. Instead of training
+Scaling might shift. Instead of training bigger models, the focus might move
+bigger models, the focus might move
+bigger models, the focus might move toward letting models think longer
+toward letting models think longer
+toward letting models think longer during inference. That's a completely
+during inference. That's a completely
+during inference. That's a completely different direction. Now, while all of
+different direction. Now, while all of
+different direction. Now, while all of this is happening on the research side,
+this is happening on the research side,
+this is happening on the research side, you also have companies pushing in
+you also have companies pushing in
+you also have companies pushing in parallel directions [music] with actual
+parallel directions [music] with actual
+parallel directions [music] with actual deployed models. Moonshot AI just
+deployed models. Moonshot AI just
+deployed models. Moonshot AI just released Kimiko 2.6, [music]
+released Kimiko 2.6, [music]
+released Kimiko 2.6, [music] and this thing is massive, 1 trillion
+and this thing is massive, 1 trillion
+and this thing is massive, 1 trillion parameters.
+parameters.
+parameters. But even here, you see similar ideas
+But even here, you see similar ideas
+But even here, you see similar ideas showing up. It uses mixture of experts
+showing up. It uses mixture of experts
+showing up. It uses mixture of experts with 384 experts, again only activating
+with 384 experts, again only activating
+with 384 experts, again only activating a small subset per input. It uses
+a small subset per input. It uses
+a small subset per input. It uses multi-head latent attention, similar to
+multi-head latent attention, similar to
+multi-head latent attention, similar to what we just talked about, to compress
+what we just talked about, to compress
+what we just talked about, to compress attention data and reduce hardware
+attention data and reduce hardware
+attention data and reduce hardware requirements. The activation function
+requirements. The activation function
+requirements. The activation function [music] is SwiGLU, which is more
+[music] is SwiGLU, which is more
+[music] is SwiGLU, which is more efficient than older approaches and
+efficient than older approaches and
+efficient than older approaches and already used in models like Llama. And
+already used in models like Llama. And
+already used in models like Llama. And then, you have multimodal capability
+then, you have multimodal capability
+then, you have multimodal capability through a 400 million parameter vision
+through a 400 million parameter vision
+through a 400 million parameter vision encoder, allowing it to process both
+encoder, allowing it to process both
+encoder, allowing it to process both text and images. But what stands out
+text and images. But what stands out
+text and images. But what stands out more is how it handles tasks. It can
+more is how it handles tasks. It can
+more is how it handles tasks. It can spawn up to 300 agents for complex
+spawn up to 300 agents for complex
+spawn up to 300 agents for complex workflows. These agents break tasks into
+workflows. These agents break tasks into
+workflows. These agents break tasks into sub-steps and execute them in parallel.
+sub-steps and execute them in parallel.
+sub-steps and execute them in parallel. So, instead of one model doing
+So, instead of one model doing
+So, instead of one model doing everything sequentially, you get this
+everything sequentially, you get this
+everything sequentially, you get this [music] distributed execution system.
+[music] distributed execution system.
+[music] distributed execution system. There's also something called claw
+There's also something called claw
+There's also something called claw groups, which lets the model bring
+groups, which lets the model bring
+groups, which lets the model bring humans into the loop, splitting tasks
+humans into the loop, splitting tasks
+humans into the loop, splitting tasks between AI agents and real people. And
+between AI agents and real people. And
+between AI agents and real people. And performance-wise, Moonshot claims it
+performance-wise, Moonshot claims it
+performance-wise, Moonshot claims it outperforms GPT 5.4 and Claude Opus 4.6
+outperforms GPT 5.4 and Claude Opus 4.6
+outperforms GPT 5.4 and Claude Opus 4.6 on multiple benchmarks.
+on multiple benchmarks.
+on multiple benchmarks. On HLE full, which is one of the hardest
+On HLE full, which is one of the hardest
+On HLE full, which is one of the hardest benchmarks out there with around 2,500
+benchmarks out there with around 2,500
+benchmarks out there with around 2,500 doctorate-level questions across more
+doctorate-level questions across more
+doctorate-level questions across more than 100 fields, Kimiko 2.6 scored 54.
+than 100 fields, Kimiko 2.6 scored 54.
+than 100 fields, Kimiko 2.6 scored 54. Opus got 53, GPT 5.4 got 52.1.
+Opus got 53, GPT 5.4 got 52.1.
+Opus got 53, GPT 5.4 got 52.1. So, very close, but slightly ahead. Now,
+So, very close, but slightly ahead. Now,
+So, very close, but slightly ahead. Now, of course, these are company-reported
+of course, these are company-reported
+of course, these are company-reported benchmarks. So, you always take them
+benchmarks. So, you always take them
+benchmarks. So, you always take them with a bit of caution. Every company
+with a bit of caution. Every company
+with a bit of caution. Every company tends to highlight their strongest
+tends to highlight their strongest
+tends to highlight their strongest results. But, the trend is clear.
+results. But, the trend is clear.
+results. But, the trend is clear. Efficiency, modularity, and parallelism
+Efficiency, modularity, and parallelism
+Efficiency, modularity, and parallelism are becoming more important than just
+are becoming more important than just
+are becoming more important than just raw parameter count. And then, on
+raw parameter count. And then, on
+raw parameter count. And then, on another front, you've got XAI pushing
+another front, you've got XAI pushing
+another front, you've got XAI pushing into voice.
+into voice.
+into voice. They just released new speech-to-text
+They just released new speech-to-text
+They just released new speech-to-text and text-to-speech APIs under the Grok
+and text-to-speech APIs under the Grok
+and text-to-speech APIs under the Grok ecosystem. And these are already being
+ecosystem. And these are already being
+ecosystem. And these are already being used in Tesla vehicles, Starlink support
+used in Tesla vehicles, Starlink support
+used in Tesla vehicles, Starlink support systems, and mobile apps.
+systems, and mobile apps.
+systems, and mobile apps. So, this isn't new tech. It's
+So, this isn't new tech. It's
+So, this isn't new tech. It's production-tested tech now being exposed
+production-tested tech now being exposed
+production-tested tech now being exposed to developers.
+to developers.
+to developers. The STT side supports 25 languages,
+The STT side supports 25 languages,
+The STT side supports 25 languages, real-time and batch transcription,
+real-time and batch transcription,
+real-time and batch transcription, speaker diarization, word-level
+speaker diarization, word-level
+speaker diarization, word-level timestamps, and 12 audio formats.
+timestamps, and 12 audio formats.
+timestamps, and 12 audio formats. The TTS side has five voices: Aura, Eve,
+The TTS side has five voices: Aura, Eve,
+The TTS side has five voices: Aura, Eve, Leo, Rex,
+Leo, Rex,
+Leo, Rex, &gt;&gt; [music]
+&gt;&gt; [music]
+&gt;&gt; [music] &gt;&gt; and Sal across 20 languages, and can
+&gt;&gt; and Sal across 20 languages, and can
+&gt;&gt; and Sal across 20 languages, and can even include expressive tags like
+even include expressive tags like
+even include expressive tags like laughter or sighs. Pricing is
+laughter or sighs. Pricing is
+laughter or sighs. Pricing is aggressive. $0.10 per hour for batch
+aggressive. $0.10 per hour for batch
+aggressive. $0.10 per hour for batch transcription, $0.20 for streaming,
+transcription, $0.20 for streaming,
+transcription, $0.20 for streaming, &gt;&gt; [music]
+&gt;&gt; [music]
+&gt;&gt; [music] &gt;&gt; and $4.20 per 1 million characters for
+&gt;&gt; and $4.20 per 1 million characters for
+&gt;&gt; and $4.20 per 1 million characters for text-to-speech. That's cheaper than most
+text-to-speech. That's cheaper than most
+text-to-speech. That's cheaper than most competitors right now. And
+competitors right now. And
+competitors right now. And performance-wise, at least according to
+performance-wise, at least according to
+performance-wise, at least according to XAI, it's strong. On phone call entity
+XAI, it's strong. On phone call entity
+XAI, it's strong. On phone call entity recognition, Grok's STT has a 5% error
+recognition, Grok's STT has a 5% error
+recognition, Grok's STT has a 5% error rate. 11 Labs is at 12%, Deepgram at
+rate. 11 Labs is at 12%, Deepgram at
+rate. 11 Labs is at 12%, Deepgram at 13.5%,
+13.5%,
+13.5%, AssemblyAI at 21.3%.
+AssemblyAI at 21.3%.
+AssemblyAI at 21.3%. That's a significant gap. Especially for
+That's a significant gap. Especially for
+That's a significant gap. Especially for industries like healthcare, law,
+industries like healthcare, law,
+industries like healthcare, law, finance, where accuracy really matters.
+finance, where accuracy really matters.
+finance, where accuracy really matters. But again, these are self-reported
+But again, these are self-reported
+But again, these are self-reported numbers.
+numbers.
+numbers. 11 Labs has years of optimization in
+11 Labs has years of optimization in
+11 Labs has years of optimization in voice quality and nuance, which might
+voice quality and nuance, which might
+voice quality and nuance, which might not show up in benchmark tests. So,
+not show up in benchmark tests. So,
+not show up in benchmark tests. So, real-world performance still needs to be
+real-world performance still needs to be
+real-world performance still needs to be judged by actual usage. Still, XAI has
+judged by actual usage. Still, XAI has
+judged by actual usage. Still, XAI has one big advantage. Scale. Millions of
+one big advantage. Scale. Millions of
+one big advantage. Scale. Millions of interactions already running through
+interactions already running through
+interactions already running through Tesla and Starlink systems. So, even if
+Tesla and Starlink systems. So, even if
+Tesla and Starlink systems. So, even if it's not perfect, it's already proven in
+it's not perfect, it's already proven in
+it's not perfect, it's already proven in real environments. Anyway, that's it for
+real environments. Anyway, that's it for
+real environments. Anyway, that's it for this one. Let me know what you think
+this one. Let me know what you think
+this one. Let me know what you think about this direction, and I'll catch you
+about this direction, and I'll catch you
+about this direction, and I'll catch you in the next one.

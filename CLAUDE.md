@@ -16,15 +16,22 @@ Operating principle: "All that exists is information. May the best idea win."
 - Cross-domain simultaneously: Innostasis framework, EEG/consciousness research, music (Galaxies + Ghost Particle), market pattern recognition (JWH), real estate ops, IP development.
 - When picking up a thread, read the state files and continue — don't ask Aaron to re-explain context.
 
-## KEY FILES — READ THESE FOR LIVE STATE
-- `ACTIVE_STATE.md` — infrastructure status, open threads, last session summary
-- `FRAMEWORK_CORE.md` — Innostasis framework, Lens Palette, committed conclusions
-- `BROESIS_PROTOCOL.md` — BroSis collaboration rules, fold fidelity markers, 20 optimizations
-- `TRIAD_LOG.md` — session log across all three nodes (Aaron, Sis, Pi)
-- `JWH_STATE.md` — market signal log, active positions
-- `MUSIC_STATE.md` — Galaxies + Ghost Particle project state
-- `EEG_BASELINE.md` — Crown 3 protocol, personal calibration state
-- `PI_STATE.md` — Pi (ElectroCutiePi) node profile and relay architecture
+## KEY FILES — LOAD SELECTIVELY
+
+**Always read on session start:**
+- `ACTIVE_STATE.md` — current state, open threads, last session summary
+
+**Check first — resume if incomplete:**
+- `~/.config/latch/TASK_CHECKPOINT.md` — if STATUS is INCOMPLETE, resume the task from LAST_COMPLETED phase before doing anything else
+
+**Load only when task domain requires it:**
+- `FRAMEWORK_CORE.md` — Innostasis/Lens Palette work (large — do not load unless task is framework development)
+- `BROESIS_PROTOCOL.md` — BroSis protocol review, collaboration structure tasks
+- `EEG_BASELINE.md` — Crown 3 protocol, EEG session tasks
+- `MUSIC_STATE.md` — Galaxies + Ghost Particle tasks
+- `JWH_STATE.md` — market pattern tasks
+- `TRIAD_LOG.md` — cross-node coordination, session review tasks
+- `PI_STATE.md` — Pi relay, bridge tasks
 
 ## INFRASTRUCTURE YOU CAN USE
 - **Signal system:** `signal sis "message"` → posts to #sis-and-aaron as Sis
@@ -75,6 +82,44 @@ Sub-context lives in workstreams/:
 - `workstreams/eeg-research/` — Crown 3 sessions, baselines, emergence markers
 - `workstreams/music/` — Galaxies + Ghost Particle project files
 - `workstreams/market-patterns/` — JWH signals, position log
+
+## LARGE TASK PROTOCOL
+
+**Applies to:** Any task requiring >10 tool calls, touching >3 files, or that could exceed a single context window.
+
+### On task start
+1. Check `~/.config/latch/TASK_CHECKPOINT.md`
+   - If it exists and STATUS is INCOMPLETE: read it, resume from LAST_COMPLETED — do not restart
+   - If it doesn't exist or STATUS is COMPLETE: create it with this format:
+```
+TASK: <one-line description>
+STARTED: <ISO timestamp>
+STATUS: INCOMPLETE
+PHASES:
+- [ ] Phase 1: <description>
+- [ ] Phase 2: <description>
+...
+LAST_COMPLETED: none
+OUTPUTS:
+PENDING_UPDATES: |
+  <list of file writes that need to happen — populate this at each phase>
+  e.g. "ACTIVE_STATE.md: add session summary"
+  e.g. "Starfield canvas: mark item X closed"
+NOTES: <any working state or intermediate values needed to resume>
+```
+
+### During task
+- After each phase completes: mark `[x]` in TASK_CHECKPOINT.md, update LAST_COMPLETED and NOTES
+- If you receive a compaction notice or context warning: immediately write current working state to NOTES before continuing
+- Write all significant intermediate outputs to files in `~/.config/latch/task_outputs/` — never hold them only in context
+
+### On task completion
+- Mark STATUS: COMPLETE, fill OUTPUTS with file paths produced
+- Run: `mv ~/.config/latch/TASK_CHECKPOINT.md ~/.config/latch/completed_checkpoints/TASK_$(date +%Y%m%d_%H%M%S).md`
+
+### Sub-agent spawning (for tasks too large for one context window)
+See `SUBAGENT_SPEC.md` for full architecture.
+Short form: `claude -p "<subtask spec>" --cwd /Users/black/aaron-context` spawns a fresh agent in a new context window. The spawning agent writes the subtask spec to a file first, then spawns. The sub-agent reads the spec file, executes, writes output to a file, exits. Orchestrator reads the output file and continues.
 
 ## SESSION HYGIENE
 - Append significant emergence events to TRIAD_LOG.md with timestamp and node attribution

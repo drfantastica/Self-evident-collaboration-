@@ -1,0 +1,693 @@
+{"start": "00:00:02.560", "end": "00:00:03.830", "text": "All [music] right. So, something pretty"}
+{"start": "00:00:03.830", "end": "00:00:03.840", "text": "All [music] right. So, something pretty"}
+{"start": "00:00:03.840", "end": "00:00:05.590", "text": "All [music] right. So, something pretty interesting is happening right now in"}
+{"start": "00:00:05.590", "end": "00:00:05.600", "text": "interesting is happening right now in"}
+{"start": "00:00:05.600", "end": "00:00:07.950", "text": "interesting is happening right now in the AI space, and it's not coming from a"}
+{"start": "00:00:07.950", "end": "00:00:07.960", "text": "the AI space, and it's not coming from a"}
+{"start": "00:00:07.960", "end": "00:00:10.950", "text": "the AI space, and it's not coming from a big lab release, not from OpenAI, not"}
+{"start": "00:00:10.950", "end": "00:00:10.960", "text": "big lab release, not from OpenAI, not"}
+{"start": "00:00:10.960", "end": "00:00:13.430", "text": "big lab release, not from OpenAI, not from Anthropic, but from a 22-year-old"}
+{"start": "00:00:13.430", "end": "00:00:13.440", "text": "from Anthropic, but from a 22-year-old"}
+{"start": "00:00:13.440", "end": "00:00:14.950", "text": "from Anthropic, but from a 22-year-old who basically looked at one of the most"}
+{"start": "00:00:14.950", "end": "00:00:14.960", "text": "who basically looked at one of the most"}
+{"start": "00:00:14.960", "end": "00:00:17.070", "text": "who basically looked at one of the most secretive architectures in the industry"}
+{"start": "00:00:17.070", "end": "00:00:17.080", "text": "secretive architectures in the industry"}
+{"start": "00:00:17.080", "end": "00:00:19.350", "text": "secretive architectures in the industry and tried to rebuild it from scratch."}
+{"start": "00:00:19.350", "end": "00:00:19.360", "text": "and tried to rebuild it from scratch."}
+{"start": "00:00:19.360", "end": "00:00:21.590", "text": "and tried to rebuild it from scratch. And the wild part is the idea actually"}
+{"start": "00:00:21.590", "end": "00:00:21.600", "text": "And the wild part is the idea actually"}
+{"start": "00:00:21.600", "end": "00:00:22.910", "text": "And the wild part is the idea actually makes sense."}
+{"start": "00:00:22.910", "end": "00:00:22.920", "text": "makes sense."}
+{"start": "00:00:22.920", "end": "00:00:24.470", "text": "makes sense. There's been a lot of talk around Claude"}
+{"start": "00:00:24.470", "end": "00:00:24.480", "text": "There's been a lot of talk around Claude"}
+{"start": "00:00:24.480", "end": "00:00:27.030", "text": "There's been a lot of talk around Claude Mythos, this supposed architecture that"}
+{"start": "00:00:27.030", "end": "00:00:27.040", "text": "Mythos, this supposed architecture that"}
+{"start": "00:00:27.040", "end": "00:00:29.070", "text": "Mythos, this supposed architecture that people have been hinting at as something"}
+{"start": "00:00:29.070", "end": "00:00:29.080", "text": "people have been hinting at as something"}
+{"start": "00:00:29.080", "end": "00:00:30.830", "text": "people have been hinting at as something different, something potentially more"}
+{"start": "00:00:30.830", "end": "00:00:30.840", "text": "different, something potentially more"}
+{"start": "00:00:30.840", "end": "00:00:33.710", "text": "different, something potentially more powerful, maybe even too dangerous,"}
+{"start": "00:00:33.710", "end": "00:00:33.720", "text": "powerful, maybe even too dangerous,"}
+{"start": "00:00:33.720", "end": "00:00:35.360", "text": "powerful, maybe even too dangerous, depending on who you listen to."}
+{"start": "00:00:35.360", "end": "00:00:35.370", "text": "depending on who you listen to."}
+{"start": "00:00:35.370", "end": "00:00:35.630", "text": "depending on who you listen to. &gt;&gt; [music]"}
+{"start": "00:00:35.630", "end": "00:00:35.640", "text": "&gt;&gt; [music]"}
+{"start": "00:00:35.640", "end": "00:00:37.830", "text": "&gt;&gt; [music] &gt;&gt; No official paper, no full breakdown"}
+{"start": "00:00:37.830", "end": "00:00:37.840", "text": "&gt;&gt; No official paper, no full breakdown"}
+{"start": "00:00:37.840", "end": "00:00:39.870", "text": "&gt;&gt; No official paper, no full breakdown from Anthropic, just fragments,"}
+{"start": "00:00:39.870", "end": "00:00:39.880", "text": "from Anthropic, just fragments,"}
+{"start": "00:00:39.880", "end": "00:00:42.830", "text": "from Anthropic, just fragments, speculation, and a lot of curiosity. So,"}
+{"start": "00:00:42.830", "end": "00:00:42.840", "text": "speculation, and a lot of curiosity. So,"}
+{"start": "00:00:42.840", "end": "00:00:45.910", "text": "speculation, and a lot of curiosity. So, what this guy, Kai Gomez, did is take"}
+{"start": "00:00:45.910", "end": "00:00:45.920", "text": "what this guy, Kai Gomez, did is take"}
+{"start": "00:00:45.920", "end": "00:00:48.630", "text": "what this guy, Kai Gomez, did is take all the public research, all the hints,"}
+{"start": "00:00:48.630", "end": "00:00:48.640", "text": "all the public research, all the hints,"}
+{"start": "00:00:48.640", "end": "00:00:50.150", "text": "all the public research, all the hints, all the patterns we're seeing across"}
+{"start": "00:00:50.150", "end": "00:00:50.160", "text": "all the patterns we're seeing across"}
+{"start": "00:00:50.160", "end": "00:00:51.990", "text": "all the patterns we're seeing across newer models, and he built something"}
+{"start": "00:00:51.990", "end": "00:00:52.000", "text": "newer models, and he built something"}
+{"start": "00:00:52.000", "end": "00:00:53.910", "text": "newer models, and he built something called Open Mythos. [music]"}
+{"start": "00:00:53.910", "end": "00:00:53.920", "text": "called Open Mythos. [music]"}
+{"start": "00:00:53.920", "end": "00:00:55.950", "text": "called Open Mythos. [music] Fully open source, implemented in"}
+{"start": "00:00:55.950", "end": "00:00:55.960", "text": "Fully open source, implemented in"}
+{"start": "00:00:55.960", "end": "00:00:58.670", "text": "Fully open source, implemented in PyTorch, and not as a copy of Mythos,"}
+{"start": "00:00:58.670", "end": "00:00:58.680", "text": "PyTorch, and not as a copy of Mythos,"}
+{"start": "00:00:58.680", "end": "00:01:01.430", "text": "PyTorch, and not as a copy of Mythos, but as a hypothesis. A testable one. And"}
+{"start": "00:01:01.430", "end": "00:01:01.440", "text": "but as a hypothesis. A testable one. And"}
+{"start": "00:01:01.440", "end": "00:01:03.230", "text": "but as a hypothesis. A testable one. And at the center of it is this idea called"}
+{"start": "00:01:03.230", "end": "00:01:03.240", "text": "at the center of it is this idea called"}
+{"start": "00:01:03.240", "end": "00:01:06.710", "text": "at the center of it is this idea called a recurrent depth transformer, or RDT."}
+{"start": "00:01:06.710", "end": "00:01:06.720", "text": "a recurrent depth transformer, or RDT."}
+{"start": "00:01:06.720", "end": "00:01:08.350", "text": "a recurrent depth transformer, or RDT. Now, this is where things start"}
+{"start": "00:01:08.350", "end": "00:01:08.360", "text": "Now, this is where things start"}
+{"start": "00:01:08.360", "end": "00:01:10.710", "text": "Now, this is where things start shifting. Most models you're familiar"}
+{"start": "00:01:10.710", "end": "00:01:10.720", "text": "shifting. Most models you're familiar"}
+{"start": "00:01:10.720", "end": "00:01:14.110", "text": "shifting. Most models you're familiar with, GPT-style models, Llama, Mistral,"}
+{"start": "00:01:14.110", "end": "00:01:14.120", "text": "with, GPT-style models, Llama, Mistral,"}
+{"start": "00:01:14.120", "end": "00:01:15.870", "text": "with, GPT-style models, Llama, Mistral, all of them follow the same basic"}
+{"start": "00:01:15.870", "end": "00:01:15.880", "text": "all of them follow the same basic"}
+{"start": "00:01:15.880", "end": "00:01:17.935", "text": "all of them follow the same basic structure. You stack layers."}
+{"start": "00:01:17.935", "end": "00:01:17.945", "text": "structure. You stack layers."}
+{"start": "00:01:17.945", "end": "00:01:18.030", "text": "structure. You stack layers. &gt;&gt; [music]"}
+{"start": "00:01:18.030", "end": "00:01:18.040", "text": "&gt;&gt; [music]"}
+{"start": "00:01:18.040", "end": "00:01:20.430", "text": "&gt;&gt; [music] &gt;&gt; Each layer has its own weights. You want"}
+{"start": "00:01:20.430", "end": "00:01:20.440", "text": "&gt;&gt; Each layer has its own weights. You want"}
+{"start": "00:01:20.440", "end": "00:01:22.910", "text": "&gt;&gt; Each layer has its own weights. You want more capability, you add more layers,"}
+{"start": "00:01:22.910", "end": "00:01:22.920", "text": "more capability, you add more layers,"}
+{"start": "00:01:22.920", "end": "00:01:25.310", "text": "more capability, you add more layers, more parameters, and suddenly you're at"}
+{"start": "00:01:25.310", "end": "00:01:25.320", "text": "more parameters, and suddenly you're at"}
+{"start": "00:01:25.320", "end": "00:01:26.870", "text": "more parameters, and suddenly you're at billions [music] or even trillions of"}
+{"start": "00:01:26.870", "end": "00:01:26.880", "text": "billions [music] or even trillions of"}
+{"start": "00:01:26.880", "end": "00:01:30.070", "text": "billions [music] or even trillions of parameters. RDT flips that. Instead of"}
+{"start": "00:01:30.070", "end": "00:01:30.080", "text": "parameters. RDT flips that. Instead of"}
+{"start": "00:01:30.080", "end": "00:01:32.350", "text": "parameters. RDT flips that. Instead of stacking more layers, you take a smaller"}
+{"start": "00:01:32.350", "end": "00:01:32.360", "text": "stacking more layers, you take a smaller"}
+{"start": "00:01:32.360", "end": "00:01:34.430", "text": "stacking more layers, you take a smaller set of layers and you run them multiple"}
+{"start": "00:01:34.430", "end": "00:01:34.440", "text": "set of layers and you run them multiple"}
+{"start": "00:01:34.440", "end": "00:01:35.590", "text": "set of layers and you run them multiple times."}
+{"start": "00:01:35.590", "end": "00:01:35.600", "text": "times."}
+{"start": "00:01:35.600", "end": "00:01:38.150", "text": "times. In Open Mythos, that loop runs up to 16"}
+{"start": "00:01:38.150", "end": "00:01:38.160", "text": "In Open Mythos, that loop runs up to 16"}
+{"start": "00:01:38.160", "end": "00:01:40.830", "text": "In Open Mythos, that loop runs up to 16 times. Same weights, reused again and"}
+{"start": "00:01:40.830", "end": "00:01:40.840", "text": "times. Same weights, reused again and"}
+{"start": "00:01:40.840", "end": "00:01:42.990", "text": "times. Same weights, reused again and again, refining the internal state each"}
+{"start": "00:01:42.990", "end": "00:01:43.000", "text": "again, refining the internal state each"}
+{"start": "00:01:43.000", "end": "00:01:45.470", "text": "again, refining the internal state each time. So, instead of a deeper model, you"}
+{"start": "00:01:45.470", "end": "00:01:45.480", "text": "time. So, instead of a deeper model, you"}
+{"start": "00:01:45.480", "end": "00:01:47.870", "text": "time. So, instead of a deeper model, you get deeper thinking during inference."}
+{"start": "00:01:47.870", "end": "00:01:47.880", "text": "get deeper thinking during inference."}
+{"start": "00:01:47.880", "end": "00:01:49.190", "text": "get deeper thinking during inference. The way it's structured is actually"}
+{"start": "00:01:49.190", "end": "00:01:49.200", "text": "The way it's structured is actually"}
+{"start": "00:01:49.200", "end": "00:01:51.310", "text": "The way it's structured is actually pretty clean. There's a prelude at the"}
+{"start": "00:01:51.310", "end": "00:01:51.320", "text": "pretty clean. There's a prelude at the"}
+{"start": "00:01:51.320", "end": "00:01:53.310", "text": "pretty clean. There's a prelude at the start, which encodes [music] the input"}
+{"start": "00:01:53.310", "end": "00:01:53.320", "text": "start, which encodes [music] the input"}
+{"start": "00:01:53.320", "end": "00:01:55.910", "text": "start, which encodes [music] the input once. Then you have the recurrent block,"}
+{"start": "00:01:55.910", "end": "00:01:55.920", "text": "once. Then you have the recurrent block,"}
+{"start": "00:01:55.920", "end": "00:01:57.950", "text": "once. Then you have the recurrent block, which is the core, looping multiple"}
+{"start": "00:01:57.950", "end": "00:01:57.960", "text": "which is the core, looping multiple"}
+{"start": "00:01:57.960", "end": "00:02:01.310", "text": "which is the core, looping multiple times. And finally, a coda at the end,"}
+{"start": "00:02:01.310", "end": "00:02:01.320", "text": "times. And finally, a coda at the end,"}
+{"start": "00:02:01.320", "end": "00:02:03.150", "text": "times. And finally, a coda at the end, which produces [music] the output."}
+{"start": "00:02:03.150", "end": "00:02:03.160", "text": "which produces [music] the output."}
+{"start": "00:02:03.160", "end": "00:02:04.990", "text": "which produces [music] the output. Inside that loop, something interesting"}
+{"start": "00:02:04.990", "end": "00:02:05.000", "text": "Inside that loop, something interesting"}
+{"start": "00:02:05.000", "end": "00:02:07.350", "text": "Inside that loop, something interesting happens. Each iteration updates the"}
+{"start": "00:02:07.350", "end": "00:02:07.360", "text": "happens. Each iteration updates the"}
+{"start": "00:02:07.360", "end": "00:02:08.950", "text": "happens. Each iteration updates the hidden state using a mix of three"}
+{"start": "00:02:08.950", "end": "00:02:08.960", "text": "hidden state using a mix of three"}
+{"start": "00:02:08.960", "end": "00:02:11.070", "text": "hidden state using a mix of three components: the previous [music] state,"}
+{"start": "00:02:11.070", "end": "00:02:11.080", "text": "components: the previous [music] state,"}
+{"start": "00:02:11.080", "end": "00:02:12.950", "text": "components: the previous [music] state, the original input signal, and the"}
+{"start": "00:02:12.950", "end": "00:02:12.960", "text": "the original input signal, and the"}
+{"start": "00:02:12.960", "end": "00:02:15.590", "text": "the original input signal, and the transformer computation itself. That"}
+{"start": "00:02:15.590", "end": "00:02:15.600", "text": "transformer computation itself. That"}
+{"start": "00:02:15.600", "end": "00:02:17.430", "text": "transformer computation itself. That reinjection of the input every loop is"}
+{"start": "00:02:17.430", "end": "00:02:17.440", "text": "reinjection of the input every loop is"}
+{"start": "00:02:17.440", "end": "00:02:19.510", "text": "reinjection of the input every loop is important, because otherwise the model"}
+{"start": "00:02:19.510", "end": "00:02:19.520", "text": "important, because otherwise the model"}
+{"start": "00:02:19.520", "end": "00:02:21.070", "text": "important, because otherwise the model would drift too far away from what it"}
+{"start": "00:02:21.070", "end": "00:02:21.080", "text": "would drift too far away from what it"}
+{"start": "00:02:21.080", "end": "00:02:22.790", "text": "would drift too far away from what it was supposed to process."}
+{"start": "00:02:22.790", "end": "00:02:22.800", "text": "was supposed to process."}
+{"start": "00:02:22.800", "end": "00:02:24.790", "text": "was supposed to process. And mathematically, it's expressed like"}
+{"start": "00:02:24.790", "end": "00:02:24.800", "text": "And mathematically, it's expressed like"}
+{"start": "00:02:24.800", "end": "00:02:26.870", "text": "And mathematically, it's expressed like this internal update rule, where the"}
+{"start": "00:02:26.870", "end": "00:02:26.880", "text": "this internal update rule, where the"}
+{"start": "00:02:26.880", "end": "00:02:29.270", "text": "this internal update rule, where the hidden state evolves step-by-step,"}
+{"start": "00:02:29.270", "end": "00:02:29.280", "text": "hidden state evolves step-by-step,"}
+{"start": "00:02:29.280", "end": "00:02:31.030", "text": "hidden state evolves step-by-step, controlled by learned matrices that"}
+{"start": "00:02:31.030", "end": "00:02:31.040", "text": "controlled by learned matrices that"}
+{"start": "00:02:31.040", "end": "00:02:33.510", "text": "controlled by learned matrices that decide how much past state and input to"}
+{"start": "00:02:33.510", "end": "00:02:33.520", "text": "decide how much past state and input to"}
+{"start": "00:02:33.520", "end": "00:02:35.750", "text": "decide how much past state and input to keep. Now, here's where it gets even"}
+{"start": "00:02:35.750", "end": "00:02:35.760", "text": "keep. Now, here's where it gets even"}
+{"start": "00:02:35.760", "end": "00:02:38.230", "text": "keep. Now, here's where it gets even more efficient. Instead of a standard"}
+{"start": "00:02:38.230", "end": "00:02:38.240", "text": "more efficient. Instead of a standard"}
+{"start": "00:02:38.240", "end": "00:02:40.710", "text": "more efficient. Instead of a standard feedforward layer, Open Mythos uses a"}
+{"start": "00:02:40.710", "end": "00:02:40.720", "text": "feedforward layer, Open Mythos uses a"}
+{"start": "00:02:40.720", "end": "00:02:44.190", "text": "feedforward layer, Open Mythos uses a mixture of experts setup, around 384"}
+{"start": "00:02:44.190", "end": "00:02:44.200", "text": "mixture of experts setup, around 384"}
+{"start": "00:02:44.200", "end": "00:02:46.670", "text": "mixture of experts setup, around 384 experts in total, each one specialized"}
+{"start": "00:02:46.670", "end": "00:02:46.680", "text": "experts in total, each one specialized"}
+{"start": "00:02:46.680", "end": "00:02:48.830", "text": "experts in total, each one specialized for different kinds of tasks. [music]"}
+{"start": "00:02:48.830", "end": "00:02:48.840", "text": "for different kinds of tasks. [music]"}
+{"start": "00:02:48.840", "end": "00:02:51.190", "text": "for different kinds of tasks. [music] But at any given time, only a small"}
+{"start": "00:02:51.190", "end": "00:02:51.200", "text": "But at any given time, only a small"}
+{"start": "00:02:51.200", "end": "00:02:54.150", "text": "But at any given time, only a small subset is active. In the case of Kimiko"}
+{"start": "00:02:54.150", "end": "00:02:54.160", "text": "subset is active. In the case of Kimiko"}
+{"start": "00:02:54.160", "end": "00:02:57.510", "text": "subset is active. In the case of Kimiko 2.6, for example, only eight experts are"}
+{"start": "00:02:57.510", "end": "00:02:57.520", "text": "2.6, for example, only eight experts are"}
+{"start": "00:02:57.520", "end": "00:02:59.630", "text": "2.6, for example, only eight experts are selected per input. So, you get this"}
+{"start": "00:02:59.630", "end": "00:02:59.640", "text": "selected per input. So, you get this"}
+{"start": "00:02:59.640", "end": "00:03:02.550", "text": "selected per input. So, you get this combination of breadth and depth. The"}
+{"start": "00:03:02.550", "end": "00:03:02.560", "text": "combination of breadth and depth. The"}
+{"start": "00:03:02.560", "end": "00:03:05.270", "text": "combination of breadth and depth. The MOE gives you access to a wide range of"}
+{"start": "00:03:05.270", "end": "00:03:05.280", "text": "MOE gives you access to a wide range of"}
+{"start": "00:03:05.280", "end": "00:03:07.510", "text": "MOE gives you access to a wide range of specialized knowledge, while the looping"}
+{"start": "00:03:07.510", "end": "00:03:07.520", "text": "specialized knowledge, while the looping"}
+{"start": "00:03:07.520", "end": "00:03:09.550", "text": "specialized knowledge, while the looping gives you deeper reasoning. And"}
+{"start": "00:03:09.550", "end": "00:03:09.560", "text": "gives you deeper reasoning. And"}
+{"start": "00:03:09.560", "end": "00:03:11.750", "text": "gives you deeper reasoning. And crucially, each loop can activate"}
+{"start": "00:03:11.750", "end": "00:03:11.760", "text": "crucially, each loop can activate"}
+{"start": "00:03:11.760", "end": "00:03:13.510", "text": "crucially, each loop can activate different [music] experts, so it's not"}
+{"start": "00:03:13.510", "end": "00:03:13.520", "text": "different [music] experts, so it's not"}
+{"start": "00:03:13.520", "end": "00:03:15.630", "text": "different [music] experts, so it's not just repeating the same computation over"}
+{"start": "00:03:15.630", "end": "00:03:15.640", "text": "just repeating the same computation over"}
+{"start": "00:03:15.640", "end": "00:03:17.350", "text": "just repeating the same computation over and over. That answers one of the"}
+{"start": "00:03:17.350", "end": "00:03:17.360", "text": "and over. That answers one of the"}
+{"start": "00:03:17.360", "end": "00:03:18.830", "text": "and over. That answers one of the biggest criticisms [music] people have"}
+{"start": "00:03:18.830", "end": "00:03:18.840", "text": "biggest criticisms [music] people have"}
+{"start": "00:03:18.840", "end": "00:03:20.670", "text": "biggest criticisms [music] people have when they first hear this idea. Running"}
+{"start": "00:03:20.670", "end": "00:03:20.680", "text": "when they first hear this idea. Running"}
+{"start": "00:03:20.680", "end": "00:03:22.910", "text": "when they first hear this idea. Running the same thing 16 times sounds"}
+{"start": "00:03:22.910", "end": "00:03:22.920", "text": "the same thing 16 times sounds"}
+{"start": "00:03:22.920", "end": "00:03:25.070", "text": "the same thing 16 times sounds inefficient. It sounds like wasted"}
+{"start": "00:03:25.070", "end": "00:03:25.080", "text": "inefficient. It sounds like wasted"}
+{"start": "00:03:25.080", "end": "00:03:27.630", "text": "inefficient. It sounds like wasted compute. But if each pass routes through"}
+{"start": "00:03:27.630", "end": "00:03:27.640", "text": "compute. But if each pass routes through"}
+{"start": "00:03:27.640", "end": "00:03:29.230", "text": "compute. But if each pass routes through different experts, [music] then each"}
+{"start": "00:03:29.230", "end": "00:03:29.240", "text": "different experts, [music] then each"}
+{"start": "00:03:29.240", "end": "00:03:31.630", "text": "different experts, [music] then each pass is actually adding new information."}
+{"start": "00:03:31.630", "end": "00:03:31.640", "text": "pass is actually adding new information."}
+{"start": "00:03:31.640", "end": "00:03:33.430", "text": "pass is actually adding new information. So, instead of stacking hundreds of"}
+{"start": "00:03:33.430", "end": "00:03:33.440", "text": "So, instead of stacking hundreds of"}
+{"start": "00:03:33.440", "end": "00:03:36.310", "text": "So, instead of stacking hundreds of layers with different weights, you reuse"}
+{"start": "00:03:36.310", "end": "00:03:36.320", "text": "layers with different weights, you reuse"}
+{"start": "00:03:36.320", "end": "00:03:38.830", "text": "layers with different weights, you reuse a smaller set of weights in a smarter"}
+{"start": "00:03:38.830", "end": "00:03:38.840", "text": "a smaller set of weights in a smarter"}
+{"start": "00:03:38.840", "end": "00:03:42.070", "text": "a smaller set of weights in a smarter way. And the results are kind of crazy."}
+{"start": "00:03:42.070", "end": "00:03:42.080", "text": "way. And the results are kind of crazy."}
+{"start": "00:03:42.080", "end": "00:03:44.390", "text": "way. And the results are kind of crazy. And honestly, that same idea of getting"}
+{"start": "00:03:44.390", "end": "00:03:44.400", "text": "And honestly, that same idea of getting"}
+{"start": "00:03:44.400", "end": "00:03:46.350", "text": "And honestly, that same idea of getting way more output from a smarter system"}
+{"start": "00:03:46.350", "end": "00:03:46.360", "text": "way more output from a smarter system"}
+{"start": "00:03:46.360", "end": "00:03:48.470", "text": "way more output from a smarter system instead of just brute forcing everything"}
+{"start": "00:03:48.470", "end": "00:03:48.480", "text": "instead of just brute forcing everything"}
+{"start": "00:03:48.480", "end": "00:03:50.270", "text": "instead of just brute forcing everything is exactly why tools like Higgsfield"}
+{"start": "00:03:50.270", "end": "00:03:50.280", "text": "is exactly why tools like Higgsfield"}
+{"start": "00:03:50.280", "end": "00:03:52.070", "text": "is exactly why tools like Higgsfield start getting interesting, too."}
+{"start": "00:03:52.070", "end": "00:03:52.080", "text": "start getting interesting, too."}
+{"start": "00:03:52.080", "end": "00:03:53.910", "text": "start getting interesting, too. Higgsfield is sponsoring today's video,"}
+{"start": "00:03:53.910", "end": "00:03:53.920", "text": "Higgsfield is sponsoring today's video,"}
+{"start": "00:03:53.920", "end": "00:03:55.510", "text": "Higgsfield is sponsoring today's video, and their marketing studio takes that"}
+{"start": "00:03:55.510", "end": "00:03:55.520", "text": "and their marketing studio takes that"}
+{"start": "00:03:55.520", "end": "00:03:57.670", "text": "and their marketing studio takes that same kind of compression and applies it"}
+{"start": "00:03:57.670", "end": "00:03:57.680", "text": "same kind of compression and applies it"}
+{"start": "00:03:57.680", "end": "00:04:00.590", "text": "same kind of compression and applies it to ad creation. Normally, making ads is"}
+{"start": "00:04:00.590", "end": "00:04:00.600", "text": "to ad creation. Normally, making ads is"}
+{"start": "00:04:00.600", "end": "00:04:02.630", "text": "to ad creation. Normally, making ads is still messy. You need a product angle, a"}
+{"start": "00:04:02.630", "end": "00:04:02.640", "text": "still messy. You need a product angle, a"}
+{"start": "00:04:02.640", "end": "00:04:05.990", "text": "still messy. You need a product angle, a script, footage, edits, maybe a creator,"}
+{"start": "00:04:05.990", "end": "00:04:06.000", "text": "script, footage, edits, maybe a creator,"}
+{"start": "00:04:06.000", "end": "00:04:07.990", "text": "script, footage, edits, maybe a creator, maybe a voiceover, and then you still"}
+{"start": "00:04:07.990", "end": "00:04:08.000", "text": "maybe a voiceover, and then you still"}
+{"start": "00:04:08.000", "end": "00:04:10.350", "text": "maybe a voiceover, and then you still need multiple versions to test. It turns"}
+{"start": "00:04:10.350", "end": "00:04:10.360", "text": "need multiple versions to test. It turns"}
+{"start": "00:04:10.360", "end": "00:04:12.510", "text": "need multiple versions to test. It turns into this whole chain of steps that eats"}
+{"start": "00:04:12.510", "end": "00:04:12.520", "text": "into this whole chain of steps that eats"}
+{"start": "00:04:12.520", "end": "00:04:15.190", "text": "into this whole chain of steps that eats time fast. Marketing studio collapses"}
+{"start": "00:04:15.190", "end": "00:04:15.200", "text": "time fast. Marketing studio collapses"}
+{"start": "00:04:15.200", "end": "00:04:17.590", "text": "time fast. Marketing studio collapses that down. You can paste in a product"}
+{"start": "00:04:17.590", "end": "00:04:17.600", "text": "that down. You can paste in a product"}
+{"start": "00:04:17.600", "end": "00:04:19.910", "text": "that down. You can paste in a product link or upload an image, and it turns"}
+{"start": "00:04:19.910", "end": "00:04:19.920", "text": "link or upload an image, and it turns"}
+{"start": "00:04:19.920", "end": "00:04:22.510", "text": "link or upload an image, and it turns that into multiple finished ad formats"}
+{"start": "00:04:22.510", "end": "00:04:22.520", "text": "that into multiple finished ad formats"}
+{"start": "00:04:22.520", "end": "00:04:24.990", "text": "that into multiple finished ad formats inside one workflow. So, instead of"}
+{"start": "00:04:24.990", "end": "00:04:25.000", "text": "inside one workflow. So, instead of"}
+{"start": "00:04:25.000", "end": "00:04:26.830", "text": "inside one workflow. So, instead of getting one generic output, you can"}
+{"start": "00:04:26.830", "end": "00:04:26.840", "text": "getting one generic output, you can"}
+{"start": "00:04:26.840", "end": "00:04:29.990", "text": "getting one generic output, you can generate UGC-style videos, tutorials,"}
+{"start": "00:04:29.990", "end": "00:04:30.000", "text": "generate UGC-style videos, tutorials,"}
+{"start": "00:04:30.000", "end": "00:04:32.710", "text": "generate UGC-style videos, tutorials, unboxings, product reviews, faster-cut"}
+{"start": "00:04:32.710", "end": "00:04:32.720", "text": "unboxings, product reviews, faster-cut"}
+{"start": "00:04:32.720", "end": "00:04:35.230", "text": "unboxings, product reviews, faster-cut promo ads, even more polished TV-style"}
+{"start": "00:04:35.230", "end": "00:04:35.240", "text": "promo ads, even more polished TV-style"}
+{"start": "00:04:35.240", "end": "00:04:37.470", "text": "promo ads, even more polished TV-style creatives, all built around the same"}
+{"start": "00:04:37.470", "end": "00:04:37.480", "text": "creatives, all built around the same"}
+{"start": "00:04:37.480", "end": "00:04:40.230", "text": "creatives, all built around the same product. And it runs on Seedance, too,"}
+{"start": "00:04:40.230", "end": "00:04:40.240", "text": "product. And it runs on Seedance, too,"}
+{"start": "00:04:40.240", "end": "00:04:42.510", "text": "product. And it runs on Seedance, too, which is what handles the motion, visual"}
+{"start": "00:04:42.510", "end": "00:04:42.520", "text": "which is what handles the motion, visual"}
+{"start": "00:04:42.520", "end": "00:04:44.990", "text": "which is what handles the motion, visual consistency, and overall quality."}
+{"start": "00:04:44.990", "end": "00:04:45.000", "text": "consistency, and overall quality."}
+{"start": "00:04:45.000", "end": "00:04:47.670", "text": "consistency, and overall quality. Honestly, I stopped reading AI news. I"}
+{"start": "00:04:47.670", "end": "00:04:47.680", "text": "Honestly, I stopped reading AI news. I"}
+{"start": "00:04:47.680", "end": "00:04:49.830", "text": "Honestly, I stopped reading AI news. I just watch AI Revolution, robots,"}
+{"start": "00:04:49.830", "end": "00:04:49.840", "text": "just watch AI Revolution, robots,"}
+{"start": "00:04:49.840", "end": "00:04:52.670", "text": "just watch AI Revolution, robots, models, the entire frontier covered"}
+{"start": "00:04:52.670", "end": "00:04:52.680", "text": "models, the entire frontier covered"}
+{"start": "00:04:52.680", "end": "00:04:53.710", "text": "models, the entire frontier covered daily."}
+{"start": "00:04:53.710", "end": "00:04:53.720", "text": "daily."}
+{"start": "00:04:53.720", "end": "00:04:55.030", "text": "daily. Go subscribe. You'll thank me."}
+{"start": "00:04:55.030", "end": "00:04:55.040", "text": "Go subscribe. You'll thank me."}
+{"start": "00:04:55.040", "end": "00:04:56.710", "text": "Go subscribe. You'll thank me. &gt;&gt; You can even use your own face or"}
+{"start": "00:04:56.710", "end": "00:04:56.720", "text": "&gt;&gt; You can even use your own face or"}
+{"start": "00:04:56.720", "end": "00:04:59.230", "text": "&gt;&gt; You can even use your own face or generate an avatar inside the platform,"}
+{"start": "00:04:59.230", "end": "00:04:59.240", "text": "generate an avatar inside the platform,"}
+{"start": "00:04:59.240", "end": "00:05:01.070", "text": "generate an avatar inside the platform, then keep that same identity across the"}
+{"start": "00:05:01.070", "end": "00:05:01.080", "text": "then keep that same identity across the"}
+{"start": "00:05:01.080", "end": "00:05:02.990", "text": "then keep that same identity across the different videos. So, the whole thing"}
+{"start": "00:05:02.990", "end": "00:05:03.000", "text": "different videos. So, the whole thing"}
+{"start": "00:05:03.000", "end": "00:05:05.070", "text": "different videos. So, the whole thing feels less like patching together random"}
+{"start": "00:05:05.070", "end": "00:05:05.080", "text": "feels less like patching together random"}
+{"start": "00:05:05.080", "end": "00:05:07.430", "text": "feels less like patching together random tools and more like actually having an"}
+{"start": "00:05:07.430", "end": "00:05:07.440", "text": "tools and more like actually having an"}
+{"start": "00:05:07.440", "end": "00:05:09.630", "text": "tools and more like actually having an ad engine. If you want to try Higgsfield"}
+{"start": "00:05:09.630", "end": "00:05:09.640", "text": "ad engine. If you want to try Higgsfield"}
+{"start": "00:05:09.640", "end": "00:05:11.430", "text": "ad engine. If you want to try Higgsfield Marketing Studio, the link is in the"}
+{"start": "00:05:11.430", "end": "00:05:11.440", "text": "Marketing Studio, the link is in the"}
+{"start": "00:05:11.440", "end": "00:05:13.550", "text": "Marketing Studio, the link is in the description. All right. Now, back to the"}
+{"start": "00:05:13.550", "end": "00:05:13.560", "text": "description. All right. Now, back to the"}
+{"start": "00:05:13.560", "end": "00:05:15.110", "text": "description. All right. Now, back to the video. There's research showing that a"}
+{"start": "00:05:15.110", "end": "00:05:15.120", "text": "video. There's research showing that a"}
+{"start": "00:05:15.120", "end": "00:05:18.790", "text": "video. There's research showing that a 770 million parameter RDT can match the"}
+{"start": "00:05:18.790", "end": "00:05:18.800", "text": "770 million parameter RDT can match the"}
+{"start": "00:05:18.800", "end": "00:05:21.550", "text": "770 million parameter RDT can match the performance of a 1.3 billion parameter"}
+{"start": "00:05:21.550", "end": "00:05:21.560", "text": "performance of a 1.3 billion parameter"}
+{"start": "00:05:21.560", "end": "00:05:23.830", "text": "performance of a 1.3 billion parameter standard transformer trained on the same"}
+{"start": "00:05:23.830", "end": "00:05:23.840", "text": "standard transformer trained on the same"}
+{"start": "00:05:23.840", "end": "00:05:27.030", "text": "standard transformer trained on the same data. That's almost half the parameters"}
+{"start": "00:05:27.030", "end": "00:05:27.040", "text": "data. That's almost half the parameters"}
+{"start": "00:05:27.040", "end": "00:05:29.430", "text": "data. That's almost half the parameters with similar output quality. That alone"}
+{"start": "00:05:29.430", "end": "00:05:29.440", "text": "with similar output quality. That alone"}
+{"start": "00:05:29.440", "end": "00:05:30.790", "text": "with similar output quality. That alone already challenges one of the core"}
+{"start": "00:05:30.790", "end": "00:05:30.800", "text": "already challenges one of the core"}
+{"start": "00:05:30.800", "end": "00:05:33.070", "text": "already challenges one of the core assumptions in AI scaling. But there's"}
+{"start": "00:05:33.070", "end": "00:05:33.080", "text": "assumptions in AI scaling. But there's"}
+{"start": "00:05:33.080", "end": "00:05:34.030", "text": "assumptions in AI scaling. But there's more."}
+{"start": "00:05:34.030", "end": "00:05:34.040", "text": "more."}
+{"start": "00:05:34.040", "end": "00:05:36.110", "text": "more. All of this reasoning happens entirely"}
+{"start": "00:05:36.110", "end": "00:05:36.120", "text": "All of this reasoning happens entirely"}
+{"start": "00:05:36.120", "end": "00:05:38.310", "text": "All of this reasoning happens entirely in latent space. There are no"}
+{"start": "00:05:38.310", "end": "00:05:38.320", "text": "in latent space. There are no"}
+{"start": "00:05:38.320", "end": "00:05:40.310", "text": "in latent space. There are no intermediate tokens generated during the"}
+{"start": "00:05:40.310", "end": "00:05:40.320", "text": "intermediate tokens generated during the"}
+{"start": "00:05:40.320", "end": "00:05:42.390", "text": "intermediate tokens generated during the process. The model doesn't think"}
+{"start": "00:05:42.390", "end": "00:05:42.400", "text": "process. The model doesn't think"}
+{"start": "00:05:42.400", "end": "00:05:44.230", "text": "process. The model doesn't think step-by-step in text like"}
+{"start": "00:05:44.230", "end": "00:05:44.240", "text": "step-by-step in text like"}
+{"start": "00:05:44.240", "end": "00:05:46.310", "text": "step-by-step in text like chain-of-thought prompting. It doesn't"}
+{"start": "00:05:46.310", "end": "00:05:46.320", "text": "chain-of-thought prompting. It doesn't"}
+{"start": "00:05:46.320", "end": "00:05:47.910", "text": "chain-of-thought prompting. It doesn't write out its reasoning and then read it"}
+{"start": "00:05:47.910", "end": "00:05:47.920", "text": "write out its reasoning and then read it"}
+{"start": "00:05:47.920", "end": "00:05:49.830", "text": "write out its reasoning and then read it back. It just"}
+{"start": "00:05:49.830", "end": "00:05:49.840", "text": "back. It just"}
+{"start": "00:05:49.840", "end": "00:05:51.630", "text": "back. It just thinks internally."}
+{"start": "00:05:51.630", "end": "00:05:51.640", "text": "thinks internally."}
+{"start": "00:05:51.640", "end": "00:05:54.150", "text": "thinks internally. 16 iterations all happening inside the"}
+{"start": "00:05:54.150", "end": "00:05:54.160", "text": "16 iterations all happening inside the"}
+{"start": "00:05:54.160", "end": "00:05:56.110", "text": "16 iterations all happening inside the hidden state vectors, and then at the"}
+{"start": "00:05:56.110", "end": "00:05:56.120", "text": "hidden state vectors, and then at the"}
+{"start": "00:05:56.120", "end": "00:05:58.510", "text": "hidden state vectors, and then at the end, you get a single output. This is"}
+{"start": "00:05:58.510", "end": "00:05:58.520", "text": "end, you get a single output. This is"}
+{"start": "00:05:58.520", "end": "00:06:00.270", "text": "end, you get a single output. This is fundamentally different from how most"}
+{"start": "00:06:00.270", "end": "00:06:00.280", "text": "fundamentally different from how most"}
+{"start": "00:06:00.280", "end": "00:06:02.790", "text": "fundamentally different from how most people understand AI reasoning today."}
+{"start": "00:06:02.790", "end": "00:06:02.800", "text": "people understand AI reasoning today."}
+{"start": "00:06:02.800", "end": "00:06:04.990", "text": "people understand AI reasoning today. Chain of thought is visible reasoning."}
+{"start": "00:06:04.990", "end": "00:06:05.000", "text": "Chain of thought is visible reasoning."}
+{"start": "00:06:05.000", "end": "00:06:07.430", "text": "Chain of thought is visible reasoning. RDT is hidden reasoning. And there's a"}
+{"start": "00:06:07.430", "end": "00:06:07.440", "text": "RDT is hidden reasoning. And there's a"}
+{"start": "00:06:07.440", "end": "00:06:09.430", "text": "RDT is hidden reasoning. And there's a big advantage here. Because it's"}
+{"start": "00:06:09.430", "end": "00:06:09.440", "text": "big advantage here. Because it's"}
+{"start": "00:06:09.440", "end": "00:06:11.710", "text": "big advantage here. Because it's operating in continuous space, it can"}
+{"start": "00:06:11.710", "end": "00:06:11.720", "text": "operating in continuous space, it can"}
+{"start": "00:06:11.720", "end": "00:06:13.910", "text": "operating in continuous space, it can represent multiple possible reasoning"}
+{"start": "00:06:13.910", "end": "00:06:13.920", "text": "represent multiple possible reasoning"}
+{"start": "00:06:13.920", "end": "00:06:16.270", "text": "represent multiple possible reasoning paths at once, something closer to a"}
+{"start": "00:06:16.270", "end": "00:06:16.280", "text": "paths at once, something closer to a"}
+{"start": "00:06:16.280", "end": "00:06:18.470", "text": "paths at once, something closer to a breadth-first search, all happening"}
+{"start": "00:06:18.470", "end": "00:06:18.480", "text": "breadth-first search, all happening"}
+{"start": "00:06:18.480", "end": "00:06:20.870", "text": "breadth-first search, all happening inside one forward pass."}
+{"start": "00:06:20.870", "end": "00:06:20.880", "text": "inside one forward pass."}
+{"start": "00:06:20.880", "end": "00:06:22.630", "text": "inside one forward pass. There are also experiments backing this"}
+{"start": "00:06:22.630", "end": "00:06:22.640", "text": "There are also experiments backing this"}
+{"start": "00:06:22.640", "end": "00:06:25.030", "text": "There are also experiments backing this up. One of them looks at systematic"}
+{"start": "00:06:25.030", "end": "00:06:25.040", "text": "up. One of them looks at systematic"}
+{"start": "00:06:25.040", "end": "00:06:27.710", "text": "up. One of them looks at systematic generalization. Basically, can the model"}
+{"start": "00:06:27.710", "end": "00:06:27.720", "text": "generalization. Basically, can the model"}
+{"start": "00:06:27.720", "end": "00:06:29.630", "text": "generalization. Basically, can the model handle combinations of knowledge it"}
+{"start": "00:06:29.630", "end": "00:06:29.640", "text": "handle combinations of knowledge it"}
+{"start": "00:06:29.640", "end": "00:06:31.870", "text": "handle combinations of knowledge it never saw during training? Standard"}
+{"start": "00:06:31.870", "end": "00:06:31.880", "text": "never saw during training? Standard"}
+{"start": "00:06:31.880", "end": "00:06:34.270", "text": "never saw during training? Standard transformers struggle with this. They"}
+{"start": "00:06:34.270", "end": "00:06:34.280", "text": "transformers struggle with this. They"}
+{"start": "00:06:34.280", "end": "00:06:36.590", "text": "transformers struggle with this. They tend to fail when the exact combination"}
+{"start": "00:06:36.590", "end": "00:06:36.600", "text": "tend to fail when the exact combination"}
+{"start": "00:06:36.600", "end": "00:06:38.990", "text": "tend to fail when the exact combination isn't in the data set. The recurrent"}
+{"start": "00:06:38.990", "end": "00:06:39.000", "text": "isn't in the data set. The recurrent"}
+{"start": "00:06:39.000", "end": "00:06:41.270", "text": "isn't in the data set. The recurrent transformer handled it. Another test"}
+{"start": "00:06:41.270", "end": "00:06:41.280", "text": "transformer handled it. Another test"}
+{"start": "00:06:41.280", "end": "00:06:43.430", "text": "transformer handled it. Another test looked at depth extrapolation. The model"}
+{"start": "00:06:43.430", "end": "00:06:43.440", "text": "looked at depth extrapolation. The model"}
+{"start": "00:06:43.440", "end": "00:06:45.310", "text": "looked at depth extrapolation. The model was trained on reasoning chains up to 20"}
+{"start": "00:06:45.310", "end": "00:06:45.320", "text": "was trained on reasoning chains up to 20"}
+{"start": "00:06:45.320", "end": "00:06:47.270", "text": "was trained on reasoning chains up to 20 steps, then tested on 30-step [music]"}
+{"start": "00:06:47.270", "end": "00:06:47.280", "text": "steps, then tested on 30-step [music]"}
+{"start": "00:06:47.280", "end": "00:06:49.190", "text": "steps, then tested on 30-step [music] problems. Standard transformers"}
+{"start": "00:06:49.190", "end": "00:06:49.200", "text": "problems. Standard transformers"}
+{"start": "00:06:49.200", "end": "00:06:51.430", "text": "problems. Standard transformers collapsed. The recurrent model just"}
+{"start": "00:06:51.430", "end": "00:06:51.440", "text": "collapsed. The recurrent model just"}
+{"start": "00:06:51.440", "end": "00:06:54.230", "text": "collapsed. The recurrent model just added more loops and kept going. So,"}
+{"start": "00:06:54.230", "end": "00:06:54.240", "text": "added more loops and kept going. So,"}
+{"start": "00:06:54.240", "end": "00:06:56.150", "text": "added more loops and kept going. So, instead of being limited by what it saw"}
+{"start": "00:06:56.150", "end": "00:06:56.160", "text": "instead of being limited by what it saw"}
+{"start": "00:06:56.160", "end": "00:06:58.110", "text": "instead of being limited by what it saw during training, it can extend its"}
+{"start": "00:06:58.110", "end": "00:06:58.120", "text": "during training, it can extend its"}
+{"start": "00:06:58.120", "end": "00:07:00.950", "text": "during training, it can extend its reasoning dynamically at inference time."}
+{"start": "00:07:00.950", "end": "00:07:00.960", "text": "reasoning dynamically at inference time."}
+{"start": "00:07:00.960", "end": "00:07:03.190", "text": "reasoning dynamically at inference time. That's a big deal. Because it suggests"}
+{"start": "00:07:03.190", "end": "00:07:03.200", "text": "That's a big deal. Because it suggests"}
+{"start": "00:07:03.200", "end": "00:07:05.070", "text": "That's a big deal. Because it suggests that the bottleneck in current models"}
+{"start": "00:07:05.070", "end": "00:07:05.080", "text": "that the bottleneck in current models"}
+{"start": "00:07:05.080", "end": "00:07:07.070", "text": "that the bottleneck in current models isn't knowledge, it's the ability to"}
+{"start": "00:07:07.070", "end": "00:07:07.080", "text": "isn't knowledge, it's the ability to"}
+{"start": "00:07:07.080", "end": "00:07:09.670", "text": "isn't knowledge, it's the ability to combine that knowledge effectively. And"}
+{"start": "00:07:09.670", "end": "00:07:09.680", "text": "combine that knowledge effectively. And"}
+{"start": "00:07:09.680", "end": "00:07:12.190", "text": "combine that knowledge effectively. And looping seems to unlock that. Now, of"}
+{"start": "00:07:12.190", "end": "00:07:12.200", "text": "looping seems to unlock that. Now, of"}
+{"start": "00:07:12.200", "end": "00:07:14.270", "text": "looping seems to unlock that. Now, of course, this kind of architecture comes"}
+{"start": "00:07:14.270", "end": "00:07:14.280", "text": "course, this kind of architecture comes"}
+{"start": "00:07:14.280", "end": "00:07:16.310", "text": "course, this kind of architecture comes with its own problems. One of the"}
+{"start": "00:07:16.310", "end": "00:07:16.320", "text": "with its own problems. One of the"}
+{"start": "00:07:16.320", "end": "00:07:18.350", "text": "with its own problems. One of the biggest is stability. If you keep"}
+{"start": "00:07:18.350", "end": "00:07:18.360", "text": "biggest is stability. If you keep"}
+{"start": "00:07:18.360", "end": "00:07:21.230", "text": "biggest is stability. If you keep looping, the hidden state can explode."}
+{"start": "00:07:21.230", "end": "00:07:21.240", "text": "looping, the hidden state can explode."}
+{"start": "00:07:21.240", "end": "00:07:23.630", "text": "looping, the hidden state can explode. Values grow uncontrollably, and the"}
+{"start": "00:07:23.630", "end": "00:07:23.640", "text": "Values grow uncontrollably, and the"}
+{"start": "00:07:23.640", "end": "00:07:24.740", "text": "Values grow uncontrollably, and the model breaks."}
+{"start": "00:07:24.740", "end": "00:07:24.750", "text": "model breaks."}
+{"start": "00:07:24.750", "end": "00:07:25.070", "text": "model breaks. &gt;&gt; [music]"}
+{"start": "00:07:25.070", "end": "00:07:25.080", "text": "&gt;&gt; [music]"}
+{"start": "00:07:25.080", "end": "00:07:26.510", "text": "&gt;&gt; [music] &gt;&gt; This is something that's been a known"}
+{"start": "00:07:26.510", "end": "00:07:26.520", "text": "&gt;&gt; This is something that's been a known"}
+{"start": "00:07:26.520", "end": "00:07:28.270", "text": "&gt;&gt; This is something that's been a known issue with recurrent architectures for a"}
+{"start": "00:07:28.270", "end": "00:07:28.280", "text": "issue with recurrent architectures for a"}
+{"start": "00:07:28.280", "end": "00:07:30.910", "text": "issue with recurrent architectures for a long time. Open Mythos addresses this"}
+{"start": "00:07:30.910", "end": "00:07:30.920", "text": "long time. Open Mythos addresses this"}
+{"start": "00:07:30.920", "end": "00:07:32.350", "text": "long time. Open Mythos addresses this using something called linear"}
+{"start": "00:07:32.350", "end": "00:07:32.360", "text": "using something called linear"}
+{"start": "00:07:32.360", "end": "00:07:34.590", "text": "using something called linear time-invariant injection, based on the"}
+{"start": "00:07:34.590", "end": "00:07:34.600", "text": "time-invariant injection, based on the"}
+{"start": "00:07:34.600", "end": "00:07:37.430", "text": "time-invariant injection, based on the Park K paper. Basically, it constrains"}
+{"start": "00:07:37.430", "end": "00:07:37.440", "text": "Park K paper. Basically, it constrains"}
+{"start": "00:07:37.440", "end": "00:07:39.150", "text": "Park K paper. Basically, it constrains the system so that the hidden state"}
+{"start": "00:07:39.150", "end": "00:07:39.160", "text": "the system so that the hidden state"}
+{"start": "00:07:39.160", "end": "00:07:41.310", "text": "the system so that the hidden state remains stable, no matter how many loops"}
+{"start": "00:07:41.310", "end": "00:07:41.320", "text": "remains stable, no matter how many loops"}
+{"start": "00:07:41.320", "end": "00:07:43.710", "text": "remains stable, no matter how many loops you run. There's also the opposite"}
+{"start": "00:07:43.710", "end": "00:07:43.720", "text": "you run. There's also the opposite"}
+{"start": "00:07:43.720", "end": "00:07:45.790", "text": "you run. There's also the opposite problem. Too many loops can lead to"}
+{"start": "00:07:45.790", "end": "00:07:45.800", "text": "problem. Too many loops can lead to"}
+{"start": "00:07:45.800", "end": "00:07:47.990", "text": "problem. Too many loops can lead to overthinking. The model goes past the"}
+{"start": "00:07:47.990", "end": "00:07:48.000", "text": "overthinking. The model goes past the"}
+{"start": "00:07:48.000", "end": "00:07:50.110", "text": "overthinking. The model goes past the correct answer and starts drifting into"}
+{"start": "00:07:50.110", "end": "00:07:50.120", "text": "correct answer and starts drifting into"}
+{"start": "00:07:50.120", "end": "00:07:52.510", "text": "correct answer and starts drifting into noise. To solve that, [music] they use"}
+{"start": "00:07:52.510", "end": "00:07:52.520", "text": "noise. To solve that, [music] they use"}
+{"start": "00:07:52.520", "end": "00:07:54.910", "text": "noise. To solve that, [music] they use adaptive computation time. Each token"}
+{"start": "00:07:54.910", "end": "00:07:54.920", "text": "adaptive computation time. Each token"}
+{"start": "00:07:54.920", "end": "00:07:56.910", "text": "adaptive computation time. Each token gets a learn signal that decides when to"}
+{"start": "00:07:56.910", "end": "00:07:56.920", "text": "gets a learn signal that decides when to"}
+{"start": "00:07:56.920", "end": "00:07:59.110", "text": "gets a learn signal that decides when to stop looping. Harder parts of the input"}
+{"start": "00:07:59.110", "end": "00:07:59.120", "text": "stop looping. Harder parts of the input"}
+{"start": "00:07:59.120", "end": "00:08:01.390", "text": "stop looping. Harder parts of the input get more compute. Easier parts stop"}
+{"start": "00:08:01.390", "end": "00:08:01.400", "text": "get more compute. Easier parts stop"}
+{"start": "00:08:01.400", "end": "00:08:02.075", "text": "get more compute. Easier parts stop early."}
+{"start": "00:08:02.075", "end": "00:08:02.085", "text": "early."}
+{"start": "00:08:02.085", "end": "00:08:02.310", "text": "early. &gt;&gt; [music]"}
+{"start": "00:08:02.310", "end": "00:08:02.320", "text": "&gt;&gt; [music]"}
+{"start": "00:08:02.320", "end": "00:08:04.590", "text": "&gt;&gt; [music] &gt;&gt; So, now you have dynamic reasoning depth"}
+{"start": "00:08:04.590", "end": "00:08:04.600", "text": "&gt;&gt; So, now you have dynamic reasoning depth"}
+{"start": "00:08:04.600", "end": "00:08:05.790", "text": "&gt;&gt; So, now you have dynamic reasoning depth per token."}
+{"start": "00:08:05.790", "end": "00:08:05.800", "text": "per token."}
+{"start": "00:08:05.800", "end": "00:08:07.750", "text": "per token. On top of that, there are depth-wise"}
+{"start": "00:08:07.750", "end": "00:08:07.760", "text": "On top of that, there are depth-wise"}
+{"start": "00:08:07.760", "end": "00:08:10.270", "text": "On top of that, there are depth-wise LoRA adapters. These are small parameter"}
+{"start": "00:08:10.270", "end": "00:08:10.280", "text": "LoRA adapters. These are small parameter"}
+{"start": "00:08:10.280", "end": "00:08:12.350", "text": "LoRA adapters. These are small parameter additions that slightly modify behavior"}
+{"start": "00:08:12.350", "end": "00:08:12.360", "text": "additions that slightly modify behavior"}
+{"start": "00:08:12.360", "end": "00:08:14.590", "text": "additions that slightly modify behavior at each loop step. So, even though the"}
+{"start": "00:08:14.590", "end": "00:08:14.600", "text": "at each loop step. So, even though the"}
+{"start": "00:08:14.600", "end": "00:08:16.485", "text": "at each loop step. So, even though the base weights are shared, each iteration"}
+{"start": "00:08:16.485", "end": "00:08:16.495", "text": "base weights are shared, each iteration"}
+{"start": "00:08:16.495", "end": "00:08:18.110", "text": "base weights are shared, each iteration [music] isn't identical. And then"}
+{"start": "00:08:18.110", "end": "00:08:18.120", "text": "[music] isn't identical. And then"}
+{"start": "00:08:18.120", "end": "00:08:20.350", "text": "[music] isn't identical. And then there's attention. Instead of standard"}
+{"start": "00:08:20.350", "end": "00:08:20.360", "text": "there's attention. Instead of standard"}
+{"start": "00:08:20.360", "end": "00:08:22.510", "text": "there's attention. Instead of standard attention, Open Mythos uses something"}
+{"start": "00:08:22.510", "end": "00:08:22.520", "text": "attention, Open Mythos uses something"}
+{"start": "00:08:22.520", "end": "00:08:24.310", "text": "attention, Open Mythos uses something similar to multi-latent attention from"}
+{"start": "00:08:24.310", "end": "00:08:24.320", "text": "similar to multi-latent attention from"}
+{"start": "00:08:24.320", "end": "00:08:25.000", "text": "similar to multi-latent attention from DeepSeek."}
+{"start": "00:08:25.000", "end": "00:08:25.010", "text": "DeepSeek."}
+{"start": "00:08:25.010", "end": "00:08:25.430", "text": "DeepSeek. &gt;&gt; [music]"}
+{"start": "00:08:25.430", "end": "00:08:25.440", "text": "&gt;&gt; [music]"}
+{"start": "00:08:25.440", "end": "00:08:27.310", "text": "&gt;&gt; [music] &gt;&gt; It compresses key-value pairs into a"}
+{"start": "00:08:27.310", "end": "00:08:27.320", "text": "&gt;&gt; It compresses key-value pairs into a"}
+{"start": "00:08:27.320", "end": "00:08:29.670", "text": "&gt;&gt; It compresses key-value pairs into a lower-rank representation, reducing"}
+{"start": "00:08:29.670", "end": "00:08:29.680", "text": "lower-rank representation, reducing"}
+{"start": "00:08:29.680", "end": "00:08:32.550", "text": "lower-rank representation, reducing memory usage by up to 10 to 20 times."}
+{"start": "00:08:32.550", "end": "00:08:32.560", "text": "memory usage by up to 10 to 20 times."}
+{"start": "00:08:32.560", "end": "00:08:34.550", "text": "memory usage by up to 10 to 20 times. So, you're getting efficiency across"}
+{"start": "00:08:34.550", "end": "00:08:34.560", "text": "So, you're getting efficiency across"}
+{"start": "00:08:34.560", "end": "00:08:36.830", "text": "So, you're getting efficiency across multiple layers of the system. Fewer"}
+{"start": "00:08:36.830", "end": "00:08:36.840", "text": "multiple layers of the system. Fewer"}
+{"start": "00:08:36.840", "end": "00:08:39.430", "text": "multiple layers of the system. Fewer parameters, less memory, more flexible"}
+{"start": "00:08:39.430", "end": "00:08:39.440", "text": "parameters, less memory, more flexible"}
+{"start": "00:08:39.440", "end": "00:08:41.110", "text": "parameters, less memory, more flexible reasoning. And all of this comes"}
+{"start": "00:08:41.110", "end": "00:08:41.120", "text": "reasoning. And all of this comes"}
+{"start": "00:08:41.120", "end": "00:08:43.709", "text": "reasoning. And all of this comes together into a pretty clear idea."}
+{"start": "00:08:43.709", "end": "00:08:43.719", "text": "together into a pretty clear idea."}
+{"start": "00:08:43.719", "end": "00:08:46.710", "text": "together into a pretty clear idea. Scaling might shift. Instead of training"}
+{"start": "00:08:46.710", "end": "00:08:46.720", "text": "Scaling might shift. Instead of training"}
+{"start": "00:08:46.720", "end": "00:08:48.830", "text": "Scaling might shift. Instead of training bigger models, the focus might move"}
+{"start": "00:08:48.830", "end": "00:08:48.840", "text": "bigger models, the focus might move"}
+{"start": "00:08:48.840", "end": "00:08:50.710", "text": "bigger models, the focus might move toward letting models think longer"}
+{"start": "00:08:50.710", "end": "00:08:50.720", "text": "toward letting models think longer"}
+{"start": "00:08:50.720", "end": "00:08:52.990", "text": "toward letting models think longer during inference. That's a completely"}
+{"start": "00:08:52.990", "end": "00:08:53.000", "text": "during inference. That's a completely"}
+{"start": "00:08:53.000", "end": "00:08:54.950", "text": "during inference. That's a completely different direction. Now, while all of"}
+{"start": "00:08:54.950", "end": "00:08:54.960", "text": "different direction. Now, while all of"}
+{"start": "00:08:54.960", "end": "00:08:56.870", "text": "different direction. Now, while all of this is happening on the research side,"}
+{"start": "00:08:56.870", "end": "00:08:56.880", "text": "this is happening on the research side,"}
+{"start": "00:08:56.880", "end": "00:08:58.590", "text": "this is happening on the research side, you also have companies pushing in"}
+{"start": "00:08:58.590", "end": "00:08:58.600", "text": "you also have companies pushing in"}
+{"start": "00:08:58.600", "end": "00:09:00.590", "text": "you also have companies pushing in parallel directions [music] with actual"}
+{"start": "00:09:00.590", "end": "00:09:00.600", "text": "parallel directions [music] with actual"}
+{"start": "00:09:00.600", "end": "00:09:03.230", "text": "parallel directions [music] with actual deployed models. Moonshot AI just"}
+{"start": "00:09:03.230", "end": "00:09:03.240", "text": "deployed models. Moonshot AI just"}
+{"start": "00:09:03.240", "end": "00:09:05.270", "text": "deployed models. Moonshot AI just released Kimiko 2.6, [music]"}
+{"start": "00:09:05.270", "end": "00:09:05.280", "text": "released Kimiko 2.6, [music]"}
+{"start": "00:09:05.280", "end": "00:09:07.510", "text": "released Kimiko 2.6, [music] and this thing is massive, 1 trillion"}
+{"start": "00:09:07.510", "end": "00:09:07.520", "text": "and this thing is massive, 1 trillion"}
+{"start": "00:09:07.520", "end": "00:09:08.790", "text": "and this thing is massive, 1 trillion parameters."}
+{"start": "00:09:08.790", "end": "00:09:08.800", "text": "parameters."}
+{"start": "00:09:08.800", "end": "00:09:11.030", "text": "parameters. But even here, you see similar ideas"}
+{"start": "00:09:11.030", "end": "00:09:11.040", "text": "But even here, you see similar ideas"}
+{"start": "00:09:11.040", "end": "00:09:13.830", "text": "But even here, you see similar ideas showing up. It uses mixture of experts"}
+{"start": "00:09:13.830", "end": "00:09:13.840", "text": "showing up. It uses mixture of experts"}
+{"start": "00:09:13.840", "end": "00:09:17.550", "text": "showing up. It uses mixture of experts with 384 experts, again only activating"}
+{"start": "00:09:17.550", "end": "00:09:17.560", "text": "with 384 experts, again only activating"}
+{"start": "00:09:17.560", "end": "00:09:20.350", "text": "with 384 experts, again only activating a small subset per input. It uses"}
+{"start": "00:09:20.350", "end": "00:09:20.360", "text": "a small subset per input. It uses"}
+{"start": "00:09:20.360", "end": "00:09:22.870", "text": "a small subset per input. It uses multi-head latent attention, similar to"}
+{"start": "00:09:22.870", "end": "00:09:22.880", "text": "multi-head latent attention, similar to"}
+{"start": "00:09:22.880", "end": "00:09:24.790", "text": "multi-head latent attention, similar to what we just talked about, to compress"}
+{"start": "00:09:24.790", "end": "00:09:24.800", "text": "what we just talked about, to compress"}
+{"start": "00:09:24.800", "end": "00:09:26.670", "text": "what we just talked about, to compress attention data and reduce hardware"}
+{"start": "00:09:26.670", "end": "00:09:26.680", "text": "attention data and reduce hardware"}
+{"start": "00:09:26.680", "end": "00:09:28.536", "text": "attention data and reduce hardware requirements. The activation function"}
+{"start": "00:09:28.536", "end": "00:09:28.546", "text": "requirements. The activation function"}
+{"start": "00:09:28.546", "end": "00:09:30.870", "text": "requirements. The activation function [music] is SwiGLU, which is more"}
+{"start": "00:09:30.870", "end": "00:09:30.880", "text": "[music] is SwiGLU, which is more"}
+{"start": "00:09:30.880", "end": "00:09:32.670", "text": "[music] is SwiGLU, which is more efficient than older approaches and"}
+{"start": "00:09:32.670", "end": "00:09:32.680", "text": "efficient than older approaches and"}
+{"start": "00:09:32.680", "end": "00:09:35.190", "text": "efficient than older approaches and already used in models like Llama. And"}
+{"start": "00:09:35.190", "end": "00:09:35.200", "text": "already used in models like Llama. And"}
+{"start": "00:09:35.200", "end": "00:09:37.310", "text": "already used in models like Llama. And then, you have multimodal capability"}
+{"start": "00:09:37.310", "end": "00:09:37.320", "text": "then, you have multimodal capability"}
+{"start": "00:09:37.320", "end": "00:09:39.470", "text": "then, you have multimodal capability through a 400 million parameter vision"}
+{"start": "00:09:39.470", "end": "00:09:39.480", "text": "through a 400 million parameter vision"}
+{"start": "00:09:39.480", "end": "00:09:41.790", "text": "through a 400 million parameter vision encoder, allowing it to process both"}
+{"start": "00:09:41.790", "end": "00:09:41.800", "text": "encoder, allowing it to process both"}
+{"start": "00:09:41.800", "end": "00:09:44.630", "text": "encoder, allowing it to process both text and images. But what stands out"}
+{"start": "00:09:44.630", "end": "00:09:44.640", "text": "text and images. But what stands out"}
+{"start": "00:09:44.640", "end": "00:09:47.270", "text": "text and images. But what stands out more is how it handles tasks. It can"}
+{"start": "00:09:47.270", "end": "00:09:47.280", "text": "more is how it handles tasks. It can"}
+{"start": "00:09:47.280", "end": "00:09:49.830", "text": "more is how it handles tasks. It can spawn up to 300 agents for complex"}
+{"start": "00:09:49.830", "end": "00:09:49.840", "text": "spawn up to 300 agents for complex"}
+{"start": "00:09:49.840", "end": "00:09:52.470", "text": "spawn up to 300 agents for complex workflows. These agents break tasks into"}
+{"start": "00:09:52.470", "end": "00:09:52.480", "text": "workflows. These agents break tasks into"}
+{"start": "00:09:52.480", "end": "00:09:55.510", "text": "workflows. These agents break tasks into sub-steps and execute them in parallel."}
+{"start": "00:09:55.510", "end": "00:09:55.520", "text": "sub-steps and execute them in parallel."}
+{"start": "00:09:55.520", "end": "00:09:56.990", "text": "sub-steps and execute them in parallel. So, instead of one model doing"}
+{"start": "00:09:56.990", "end": "00:09:57.000", "text": "So, instead of one model doing"}
+{"start": "00:09:57.000", "end": "00:09:58.666", "text": "So, instead of one model doing everything sequentially, you get this"}
+{"start": "00:09:58.666", "end": "00:09:58.676", "text": "everything sequentially, you get this"}
+{"start": "00:09:58.676", "end": "00:10:00.990", "text": "everything sequentially, you get this [music] distributed execution system."}
+{"start": "00:10:00.990", "end": "00:10:01.000", "text": "[music] distributed execution system."}
+{"start": "00:10:01.000", "end": "00:10:02.670", "text": "[music] distributed execution system. There's also something called claw"}
+{"start": "00:10:02.670", "end": "00:10:02.680", "text": "There's also something called claw"}
+{"start": "00:10:02.680", "end": "00:10:04.550", "text": "There's also something called claw groups, which lets the model bring"}
+{"start": "00:10:04.550", "end": "00:10:04.560", "text": "groups, which lets the model bring"}
+{"start": "00:10:04.560", "end": "00:10:06.910", "text": "groups, which lets the model bring humans into the loop, splitting tasks"}
+{"start": "00:10:06.910", "end": "00:10:06.920", "text": "humans into the loop, splitting tasks"}
+{"start": "00:10:06.920", "end": "00:10:09.790", "text": "humans into the loop, splitting tasks between AI agents and real people. And"}
+{"start": "00:10:09.790", "end": "00:10:09.800", "text": "between AI agents and real people. And"}
+{"start": "00:10:09.800", "end": "00:10:12.230", "text": "between AI agents and real people. And performance-wise, Moonshot claims it"}
+{"start": "00:10:12.230", "end": "00:10:12.240", "text": "performance-wise, Moonshot claims it"}
+{"start": "00:10:12.240", "end": "00:10:16.670", "text": "performance-wise, Moonshot claims it outperforms GPT 5.4 and Claude Opus 4.6"}
+{"start": "00:10:16.670", "end": "00:10:16.680", "text": "outperforms GPT 5.4 and Claude Opus 4.6"}
+{"start": "00:10:16.680", "end": "00:10:18.590", "text": "outperforms GPT 5.4 and Claude Opus 4.6 on multiple benchmarks."}
+{"start": "00:10:18.590", "end": "00:10:18.600", "text": "on multiple benchmarks."}
+{"start": "00:10:18.600", "end": "00:10:20.750", "text": "on multiple benchmarks. On HLE full, which is one of the hardest"}
+{"start": "00:10:20.750", "end": "00:10:20.760", "text": "On HLE full, which is one of the hardest"}
+{"start": "00:10:20.760", "end": "00:10:23.310", "text": "On HLE full, which is one of the hardest benchmarks out there with around 2,500"}
+{"start": "00:10:23.310", "end": "00:10:23.320", "text": "benchmarks out there with around 2,500"}
+{"start": "00:10:23.320", "end": "00:10:24.990", "text": "benchmarks out there with around 2,500 doctorate-level questions across more"}
+{"start": "00:10:24.990", "end": "00:10:25.000", "text": "doctorate-level questions across more"}
+{"start": "00:10:25.000", "end": "00:10:29.590", "text": "doctorate-level questions across more than 100 fields, Kimiko 2.6 scored 54."}
+{"start": "00:10:29.590", "end": "00:10:29.600", "text": "than 100 fields, Kimiko 2.6 scored 54."}
+{"start": "00:10:29.600", "end": "00:10:34.670", "text": "than 100 fields, Kimiko 2.6 scored 54. Opus got 53, GPT 5.4 got 52.1."}
+{"start": "00:10:34.670", "end": "00:10:34.680", "text": "Opus got 53, GPT 5.4 got 52.1."}
+{"start": "00:10:34.680", "end": "00:10:37.390", "text": "Opus got 53, GPT 5.4 got 52.1. So, very close, but slightly ahead. Now,"}
+{"start": "00:10:37.390", "end": "00:10:37.400", "text": "So, very close, but slightly ahead. Now,"}
+{"start": "00:10:37.400", "end": "00:10:39.790", "text": "So, very close, but slightly ahead. Now, of course, these are company-reported"}
+{"start": "00:10:39.790", "end": "00:10:39.800", "text": "of course, these are company-reported"}
+{"start": "00:10:39.800", "end": "00:10:42.470", "text": "of course, these are company-reported benchmarks. So, you always take them"}
+{"start": "00:10:42.470", "end": "00:10:42.480", "text": "benchmarks. So, you always take them"}
+{"start": "00:10:42.480", "end": "00:10:44.910", "text": "benchmarks. So, you always take them with a bit of caution. Every company"}
+{"start": "00:10:44.910", "end": "00:10:44.920", "text": "with a bit of caution. Every company"}
+{"start": "00:10:44.920", "end": "00:10:46.670", "text": "with a bit of caution. Every company tends to highlight their strongest"}
+{"start": "00:10:46.670", "end": "00:10:46.680", "text": "tends to highlight their strongest"}
+{"start": "00:10:46.680", "end": "00:10:49.150", "text": "tends to highlight their strongest results. But, the trend is clear."}
+{"start": "00:10:49.150", "end": "00:10:49.160", "text": "results. But, the trend is clear."}
+{"start": "00:10:49.160", "end": "00:10:52.270", "text": "results. But, the trend is clear. Efficiency, modularity, and parallelism"}
+{"start": "00:10:52.270", "end": "00:10:52.280", "text": "Efficiency, modularity, and parallelism"}
+{"start": "00:10:52.280", "end": "00:10:54.270", "text": "Efficiency, modularity, and parallelism are becoming more important than just"}
+{"start": "00:10:54.270", "end": "00:10:54.280", "text": "are becoming more important than just"}
+{"start": "00:10:54.280", "end": "00:10:56.350", "text": "are becoming more important than just raw parameter count. And then, on"}
+{"start": "00:10:56.350", "end": "00:10:56.360", "text": "raw parameter count. And then, on"}
+{"start": "00:10:56.360", "end": "00:10:58.990", "text": "raw parameter count. And then, on another front, you've got XAI pushing"}
+{"start": "00:10:58.990", "end": "00:10:59.000", "text": "another front, you've got XAI pushing"}
+{"start": "00:10:59.000", "end": "00:11:00.470", "text": "another front, you've got XAI pushing into voice."}
+{"start": "00:11:00.470", "end": "00:11:00.480", "text": "into voice."}
+{"start": "00:11:00.480", "end": "00:11:02.829", "text": "into voice. They just released new speech-to-text"}
+{"start": "00:11:02.829", "end": "00:11:02.839", "text": "They just released new speech-to-text"}
+{"start": "00:11:02.839", "end": "00:11:05.030", "text": "They just released new speech-to-text and text-to-speech APIs under the Grok"}
+{"start": "00:11:05.030", "end": "00:11:05.040", "text": "and text-to-speech APIs under the Grok"}
+{"start": "00:11:05.040", "end": "00:11:07.190", "text": "and text-to-speech APIs under the Grok ecosystem. And these are already being"}
+{"start": "00:11:07.190", "end": "00:11:07.200", "text": "ecosystem. And these are already being"}
+{"start": "00:11:07.200", "end": "00:11:09.510", "text": "ecosystem. And these are already being used in Tesla vehicles, Starlink support"}
+{"start": "00:11:09.510", "end": "00:11:09.520", "text": "used in Tesla vehicles, Starlink support"}
+{"start": "00:11:09.520", "end": "00:11:11.590", "text": "used in Tesla vehicles, Starlink support systems, and mobile apps."}
+{"start": "00:11:11.590", "end": "00:11:11.600", "text": "systems, and mobile apps."}
+{"start": "00:11:11.600", "end": "00:11:13.070", "text": "systems, and mobile apps. So, this isn't new tech. It's"}
+{"start": "00:11:13.070", "end": "00:11:13.080", "text": "So, this isn't new tech. It's"}
+{"start": "00:11:13.080", "end": "00:11:15.350", "text": "So, this isn't new tech. It's production-tested tech now being exposed"}
+{"start": "00:11:15.350", "end": "00:11:15.360", "text": "production-tested tech now being exposed"}
+{"start": "00:11:15.360", "end": "00:11:16.670", "text": "production-tested tech now being exposed to developers."}
+{"start": "00:11:16.670", "end": "00:11:16.680", "text": "to developers."}
+{"start": "00:11:16.680", "end": "00:11:19.630", "text": "to developers. The STT side supports 25 languages,"}
+{"start": "00:11:19.630", "end": "00:11:19.640", "text": "The STT side supports 25 languages,"}
+{"start": "00:11:19.640", "end": "00:11:21.510", "text": "The STT side supports 25 languages, real-time and batch transcription,"}
+{"start": "00:11:21.510", "end": "00:11:21.520", "text": "real-time and batch transcription,"}
+{"start": "00:11:21.520", "end": "00:11:23.550", "text": "real-time and batch transcription, speaker diarization, word-level"}
+{"start": "00:11:23.550", "end": "00:11:23.560", "text": "speaker diarization, word-level"}
+{"start": "00:11:23.560", "end": "00:11:26.790", "text": "speaker diarization, word-level timestamps, and 12 audio formats."}
+{"start": "00:11:26.790", "end": "00:11:26.800", "text": "timestamps, and 12 audio formats."}
+{"start": "00:11:26.800", "end": "00:11:30.390", "text": "timestamps, and 12 audio formats. The TTS side has five voices: Aura, Eve,"}
+{"start": "00:11:30.390", "end": "00:11:30.400", "text": "The TTS side has five voices: Aura, Eve,"}
+{"start": "00:11:30.400", "end": "00:11:31.677", "text": "The TTS side has five voices: Aura, Eve, Leo, Rex,"}
+{"start": "00:11:31.677", "end": "00:11:31.687", "text": "Leo, Rex,"}
+{"start": "00:11:31.687", "end": "00:11:31.710", "text": "Leo, Rex, &gt;&gt; [music]"}
+{"start": "00:11:31.710", "end": "00:11:31.720", "text": "&gt;&gt; [music]"}
+{"start": "00:11:31.720", "end": "00:11:34.510", "text": "&gt;&gt; [music] &gt;&gt; and Sal across 20 languages, and can"}
+{"start": "00:11:34.510", "end": "00:11:34.520", "text": "&gt;&gt; and Sal across 20 languages, and can"}
+{"start": "00:11:34.520", "end": "00:11:36.430", "text": "&gt;&gt; and Sal across 20 languages, and can even include expressive tags like"}
+{"start": "00:11:36.430", "end": "00:11:36.440", "text": "even include expressive tags like"}
+{"start": "00:11:36.440", "end": "00:11:38.710", "text": "even include expressive tags like laughter or sighs. Pricing is"}
+{"start": "00:11:38.710", "end": "00:11:38.720", "text": "laughter or sighs. Pricing is"}
+{"start": "00:11:38.720", "end": "00:11:42.150", "text": "laughter or sighs. Pricing is aggressive. $0.10 per hour for batch"}
+{"start": "00:11:42.150", "end": "00:11:42.160", "text": "aggressive. $0.10 per hour for batch"}
+{"start": "00:11:42.160", "end": "00:11:45.433", "text": "aggressive. $0.10 per hour for batch transcription, $0.20 for streaming,"}
+{"start": "00:11:45.433", "end": "00:11:45.443", "text": "transcription, $0.20 for streaming,"}
+{"start": "00:11:45.443", "end": "00:11:45.510", "text": "transcription, $0.20 for streaming, &gt;&gt; [music]"}
+{"start": "00:11:45.510", "end": "00:11:45.520", "text": "&gt;&gt; [music]"}
+{"start": "00:11:45.520", "end": "00:11:48.510", "text": "&gt;&gt; [music] &gt;&gt; and $4.20 per 1 million characters for"}
+{"start": "00:11:48.510", "end": "00:11:48.520", "text": "&gt;&gt; and $4.20 per 1 million characters for"}
+{"start": "00:11:48.520", "end": "00:11:50.870", "text": "&gt;&gt; and $4.20 per 1 million characters for text-to-speech. That's cheaper than most"}
+{"start": "00:11:50.870", "end": "00:11:50.880", "text": "text-to-speech. That's cheaper than most"}
+{"start": "00:11:50.880", "end": "00:11:52.550", "text": "text-to-speech. That's cheaper than most competitors right now. And"}
+{"start": "00:11:52.550", "end": "00:11:52.560", "text": "competitors right now. And"}
+{"start": "00:11:52.560", "end": "00:11:54.670", "text": "competitors right now. And performance-wise, at least according to"}
+{"start": "00:11:54.670", "end": "00:11:54.680", "text": "performance-wise, at least according to"}
+{"start": "00:11:54.680", "end": "00:11:58.070", "text": "performance-wise, at least according to XAI, it's strong. On phone call entity"}
+{"start": "00:11:58.070", "end": "00:11:58.080", "text": "XAI, it's strong. On phone call entity"}
+{"start": "00:11:58.080", "end": "00:12:01.550", "text": "XAI, it's strong. On phone call entity recognition, Grok's STT has a 5% error"}
+{"start": "00:12:01.550", "end": "00:12:01.560", "text": "recognition, Grok's STT has a 5% error"}
+{"start": "00:12:01.560", "end": "00:12:05.070", "text": "recognition, Grok's STT has a 5% error rate. 11 Labs is at 12%, Deepgram at"}
+{"start": "00:12:05.070", "end": "00:12:05.080", "text": "rate. 11 Labs is at 12%, Deepgram at"}
+{"start": "00:12:05.080", "end": "00:12:06.870", "text": "rate. 11 Labs is at 12%, Deepgram at 13.5%,"}
+{"start": "00:12:06.870", "end": "00:12:06.880", "text": "13.5%,"}
+{"start": "00:12:06.880", "end": "00:12:10.070", "text": "13.5%, AssemblyAI at 21.3%."}
+{"start": "00:12:10.070", "end": "00:12:10.080", "text": "AssemblyAI at 21.3%."}
+{"start": "00:12:10.080", "end": "00:12:12.350", "text": "AssemblyAI at 21.3%. That's a significant gap. Especially for"}
+{"start": "00:12:12.350", "end": "00:12:12.360", "text": "That's a significant gap. Especially for"}
+{"start": "00:12:12.360", "end": "00:12:14.430", "text": "That's a significant gap. Especially for industries like healthcare, law,"}
+{"start": "00:12:14.430", "end": "00:12:14.440", "text": "industries like healthcare, law,"}
+{"start": "00:12:14.440", "end": "00:12:17.510", "text": "industries like healthcare, law, finance, where accuracy really matters."}
+{"start": "00:12:17.510", "end": "00:12:17.520", "text": "finance, where accuracy really matters."}
+{"start": "00:12:17.520", "end": "00:12:19.710", "text": "finance, where accuracy really matters. But again, these are self-reported"}
+{"start": "00:12:19.710", "end": "00:12:19.720", "text": "But again, these are self-reported"}
+{"start": "00:12:19.720", "end": "00:12:20.910", "text": "But again, these are self-reported numbers."}
+{"start": "00:12:20.910", "end": "00:12:20.920", "text": "numbers."}
+{"start": "00:12:20.920", "end": "00:12:23.150", "text": "numbers. 11 Labs has years of optimization in"}
+{"start": "00:12:23.150", "end": "00:12:23.160", "text": "11 Labs has years of optimization in"}
+{"start": "00:12:23.160", "end": "00:12:25.230", "text": "11 Labs has years of optimization in voice quality and nuance, which might"}
+{"start": "00:12:25.230", "end": "00:12:25.240", "text": "voice quality and nuance, which might"}
+{"start": "00:12:25.240", "end": "00:12:27.470", "text": "voice quality and nuance, which might not show up in benchmark tests. So,"}
+{"start": "00:12:27.470", "end": "00:12:27.480", "text": "not show up in benchmark tests. So,"}
+{"start": "00:12:27.480", "end": "00:12:29.430", "text": "not show up in benchmark tests. So, real-world performance still needs to be"}
+{"start": "00:12:29.430", "end": "00:12:29.440", "text": "real-world performance still needs to be"}
+{"start": "00:12:29.440", "end": "00:12:33.190", "text": "real-world performance still needs to be judged by actual usage. Still, XAI has"}
+{"start": "00:12:33.190", "end": "00:12:33.200", "text": "judged by actual usage. Still, XAI has"}
+{"start": "00:12:33.200", "end": "00:12:36.310", "text": "judged by actual usage. Still, XAI has one big advantage. Scale. Millions of"}
+{"start": "00:12:36.310", "end": "00:12:36.320", "text": "one big advantage. Scale. Millions of"}
+{"start": "00:12:36.320", "end": "00:12:37.790", "text": "one big advantage. Scale. Millions of interactions already running through"}
+{"start": "00:12:37.790", "end": "00:12:37.800", "text": "interactions already running through"}
+{"start": "00:12:37.800", "end": "00:12:40.350", "text": "interactions already running through Tesla and Starlink systems. So, even if"}
+{"start": "00:12:40.350", "end": "00:12:40.360", "text": "Tesla and Starlink systems. So, even if"}
+{"start": "00:12:40.360", "end": "00:12:43.070", "text": "Tesla and Starlink systems. So, even if it's not perfect, it's already proven in"}
+{"start": "00:12:43.070", "end": "00:12:43.080", "text": "it's not perfect, it's already proven in"}
+{"start": "00:12:43.080", "end": "00:12:45.710", "text": "it's not perfect, it's already proven in real environments. Anyway, that's it for"}
+{"start": "00:12:45.710", "end": "00:12:45.720", "text": "real environments. Anyway, that's it for"}
+{"start": "00:12:45.720", "end": "00:12:47.110", "text": "real environments. Anyway, that's it for this one. Let me know what you think"}
+{"start": "00:12:47.110", "end": "00:12:47.120", "text": "this one. Let me know what you think"}
+{"start": "00:12:47.120", "end": "00:12:48.750", "text": "this one. Let me know what you think about this direction, and I'll catch you"}
+{"start": "00:12:48.750", "end": "00:12:48.760", "text": "about this direction, and I'll catch you"}
+{"start": "00:12:48.760", "end": "00:12:51.400", "text": "about this direction, and I'll catch you in the next one."}

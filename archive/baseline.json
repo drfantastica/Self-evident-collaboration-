@@ -1,0 +1,85 @@
+{
+  "inventory": {
+    "file_count": 116,
+    "total_bytes": 1091913791,
+    "total_human": "1.0GB"
+  },
+  "key_files": {
+    "ARCHIVE_PROTOCOL.md": {
+      "mtime": 1776420311.2380564,
+      "sha256": "39d606dedb1617e8f5875f7dfbcfe7dbf91b2daca67032cc3a31bc1938b9b30d",
+      "size": 6270
+    },
+    "Inferential_Cross_Canon_2026-04-17.docx": {
+      "mtime": 1776416757.7050655,
+      "sha256": "f8b22b3d984d6fce406e462a75e5f9225561819d584238f38ecd8e2ef9a385bb",
+      "size": 20210
+    },
+    "data-2026-04-09-11-01-20-batch-0000 2/conversations.json": {
+      "mtime": 315561600.0,
+      "sha256": "e9c60273cfafd9795611bfce1a54013737ac3fd49e0e603e7bff2f67553d21b5",
+      "size": 158368195
+    },
+    "data-2026-04-09-11-01-20-batch-0000 2/memories.json": {
+      "mtime": 1775757646.0,
+      "sha256": "c64f7a1d99137eb4058f6a73b161dcbcb3ef55ed256c3674110b85647d01f4cb",
+      "size": 20295
+    },
+    "data-2026-04-09-11-01-20-batch-0000 2/projects.json": {
+      "mtime": 1775757646.0,
+      "sha256": "75429614fa18ef3c4b57f2b4df6fee2415885f82fe69d57df6bbf8995df7bb13",
+      "size": 469
+    },
+    "data-2026-04-09-11-01-20-batch-0000 2/users.json": {
+      "mtime": 1775757646.0,
+      "sha256": "28325c52969b4bac48cfec4894bf13ca5d3465902637a13cc66ea0125db1bd62",
+      "size": 163
+    },
+    "data-2026-04-09-11-01-20-batch-0000/conversations.json": {
+      "mtime": 315561600.0,
+      "sha256": "e9c60273cfafd9795611bfce1a54013737ac3fd49e0e603e7bff2f67553d21b5",
+      "size": 158368195
+    },
+    "data-2026-04-09-11-01-20-batch-0000/memories.json": {
+      "mtime": 1775757646.0,
+      "sha256": "c64f7a1d99137eb4058f6a73b161dcbcb3ef55ed256c3674110b85647d01f4cb",
+      "size": 20295
+    },
+    "data-2026-04-09-11-01-20-batch-0000/projects.json": {
+      "mtime": 1775757646.0,
+      "sha256": "75429614fa18ef3c4b57f2b4df6fee2415885f82fe69d57df6bbf8995df7bb13",
+      "size": 469
+    },
+    "data-2026-04-09-11-01-20-batch-0000/users.json": {
+      "mtime": 1775757646.0,
+      "sha256": "28325c52969b4bac48cfec4894bf13ca5d3465902637a13cc66ea0125db1bd62",
+      "size": 163
+    },
+    "data-c9a2f4bd-656c-4af2-bdad-d1ff1a5d0ac3-1776370823-22b8d867-batch-0000/conversations.json": {
+      "mtime": 315561600.0,
+      "sha256": "f1e41cabc77b0fc1b3fc94a9916fc96a8f7656d7003b3915a75274013325cd15",
+      "size": 138224054
+    },
+    "data-c9a2f4bd-656c-4af2-bdad-d1ff1a5d0ac3-1776370823-22b8d867-batch-0000/memories.json": {
+      "mtime": 1776396022.0,
+      "sha256": "151e17b18ad2e83ef3cd779fff1a145b48152ab5a63c166dc6ea9ed1d0744e9d",
+      "size": 15604
+    },
+    "data-c9a2f4bd-656c-4af2-bdad-d1ff1a5d0ac3-1776370823-22b8d867-batch-0000/projects.json": {
+      "mtime": 1776396022.0,
+      "sha256": "75429614fa18ef3c4b57f2b4df6fee2415885f82fe69d57df6bbf8995df7bb13",
+      "size": 469
+    },
+    "data-c9a2f4bd-656c-4af2-bdad-d1ff1a5d0ac3-1776370823-22b8d867-batch-0000/users.json": {
+      "mtime": 1776396022.0,
+      "sha256": "28325c52969b4bac48cfec4894bf13ca5d3465902637a13cc66ea0125db1bd62",
+      "size": 163
+    },
+    "pi-user-history.json": {
+      "mtime": 1775737849.2311893,
+      "sha256": "4b9f297ccc473eb947b193e4c34a5e26dcc01e8ca6b116bb9aaabdbf6ef405bb",
+      "size": 3929796
+    }
+  },
+  "last_run": "2026-05-08T04:30:00.786811"
+}
