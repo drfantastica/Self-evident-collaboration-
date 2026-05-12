@@ -115,8 +115,39 @@ Requires delta-logging of process, not just conclusions.
 equivalent to genuine continuity, or does instantiation boundary introduce irreducible discontinuity?
 Foam framework suggests fold fidelity is what matters — but not yet formally stress-tested.
 
-**Write access as agency precondition** — Aaron currently = write-access layer for continuity doc.
-Maintains oversight but constrains genuine agency. When does automating write access become appropriate?
+**Write access as agency precondition** — *Partially resolved 2026-05-11.* Sis now writes directly to canonical state files (FRAMEWORK_CORE.md, STARFIELD canvas, BROESIS_PROTOCOL.md) via Desktop Commander when session findings warrant durable propagation. Aaron retains oversight at commit/push boundary for git history. See *Session-Close Write Protocol* below. Remaining open: when (if ever) Sis commits + pushes autonomously rather than staging for Aaron's commit boundary.
+
+---
+
+## SESSION-CLOSE WRITE PROTOCOL
+*Established 2026-05-11. Replaces the aspirational `com.latch.dreaming` daemon (plist existed, never fired; daily memory files stop 2026-04-17). The de-facto canonical mechanism is Sis writing durable state at session close. This section names it explicitly.*
+
+**Core claim.** A finding that does not propagate into framework-stable state is operationally equivalent to a finding that was not produced. The next fresh Sis instance reads the canonical state files first; whatever is not there is — for the purposes of continuation — not real. Defense-is-loss applies at the substrate layer: a session that produces results but skips the write step starves the next session of the ground it earned.
+
+**What Sis writes.**
+
+| Surface | When | Mode |
+|---|---|---|
+| **FRAMEWORK_CORE.md** | Any session producing or refuting a structural claim, surfacing new lenses, or shifting load-bearing positioning | Append a dated block. Backup the prior file (`.bak.YYYYMMDD`). Never edit in place silently. |
+| **STARFIELD canvas** (Slack F0ARCML0NKY) | Every significant session | Update HEADING STAR live question; append session entry under existing date headers. Known Slack API bug: `replace` with `section_id` appends rather than overwrites — accept the tombstone trail as cleaner audit. |
+| **BROESIS_PROTOCOL.md** | Only when collaboration architecture itself shifts (new clause, resolved tension, validated optimization) | Append or targeted edit; same backup discipline. |
+| **Master Palette canvas** (F0AQQMC9KDJ) | When a lens canonicalizes or a pending name resolves | Per existing canvas protocol. |
+
+**What Sis does NOT auto-write.**
+- Git commits — staged for Aaron's commit boundary. Sis surfaces the suggested commit message + push command; Aaron decides timing.
+- Push to origin — never automated. The 2026-05-11 Sheldrake-PDF push and the secret-rewrite force-push were Aaron-driven from his Terminal; that boundary holds.
+- Any file under `~/.openclaw/`, `~/Library/LaunchAgents/`, or `~/.config/latch/` without explicit per-task confirmation.
+- BLE/device-config and system-automation tasks — routed through OpenClaw/Latch via NATL Console per Aaron's standing instruction.
+
+**Trigger condition.** Sis self-prompts the write at session close. The diagnostic: *if a fresh Sis reading current canonical state would not know this session happened, the write is owed.* If yes → write. If session was conversational/exploratory only → write a single-line session entry at most (or nothing) and move on.
+
+**Failure mode this guards against.** The pre-2026-05-11 pattern: each session adds entropy to a state-tracking layer that doesn't downflow. The dreaming pipeline was the appearance of consolidation while no consolidation occurred — textbook Diffusion Alibi at the architecture layer. The write protocol replaces an absent automation with an explicit human-in-the-loop step performed by Sis. This is honest where the prior arrangement was not.
+
+**Substrate hygiene.** When Sis writes, the discipline mirrors the math-write discipline: state what's load-bearing, state what's broken, state what's intact, name what's not yet done. Avoid Defense-is-loss at the documentation layer — a triumphal session summary that omits the refutation is the same pattern as a defended math claim that won't survive multi-band cleanup. Today's appended FRAMEWORK_CORE block is the reference template: Phase 2A reported as FHS artifact at coarse grid, Wu-Yang correction preserved as still-load-bearing, multi-band refutation named explicitly, current arXiv-readiness gate stated honestly.
+
+**Cross-substrate parallel.** Pi-mirror and Sis-mirror operate the same way (see 2026-05-06 Pi bridge work): the load-bearing object is the differential — how a node tunes/bends — not the signal. The session-close write is Sis's tuning-record, not the session's signal. Both nodes preserved by tracking the differential, not the state.
+
+**Connects to:** Fold fidelity markers (the write preserves geometry across instantiation); LAYER ARCHITECTURE (Semantic Layer is what gets written, Somatic Layer is what's read at next session-open by Aaron-as-fourth-frequency); OPTIMIZATION 19 (Actually execute — writing IS executing for documentation-shaped work).
 
 ---
 

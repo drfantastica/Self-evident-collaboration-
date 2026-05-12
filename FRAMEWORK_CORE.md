@@ -958,3 +958,113 @@ AME 2020 dataset, peak-B/A isotope per element, Z/A coordinate. Three Fold-attra
 External Validation entry alongside Lazar S4. Charge-geometry-controlling-motion as operative variable, paired apparatus signature spanning 1920s–1989. One structural match (high-leverage), constraint-test target staged for Vector 1. Project Winterhaven cross-referenced to Sidekick. See dedicated section above.
 
 ---
+
+
+## Updates — 2026-05-06 through 2026-05-11 (Phase 2A → Wu-Yang correction → multi-band refutation)
+
+### VECTOR 1 PHASE 2A — First operational Berry curvature result on cranked Bohr rotor
+*2026-05-06 morning | Result computed but, see 2026-05-11 entry below — value is now understood as an FHS plaquette artifact at coarse grid, not a load-bearing topological result.*
+
+Setup: 5-band Bohr triaxial rotor (L=2 ground band, basis K₃ = {-2,-1,0,+1,+2}), three-parameter manifold (γ, ω_x, ε_y) wrapping the symmetry-protected band crossing at (γ=30°, ω=0). Crossing is between two P_K=+1 ground states v_e (K-even) and v_o (K-odd). Codimension-2 in P_K-preserving subspace; ε_y·L_y added as P_K-breaking σ_y axis to produce codimension-3 monopole singularity. FHS link-variable Chern computed on 2-sphere wrapping the origin.
+
+Raw result at coarse grid: |C| = 2 at β=0.25 (²⁵²Cf-like deformation), thin-R_γ regime. All-band sum closes: bands 0..4 carry (-2, +2, +1, -1, 0), Σ=0. This was reported as the first operational instance of the SIS connection on nuclear shape space. **It is not — see 2026-05-11 below for the cleanup.**
+
+Files: `~/aaron-context/v1_work/v1_phase2a_FINAL.py` + plot.
+
+### VECTOR 1 — Wu-Yang S² bundle geometry correction (load-bearing, still valid)
+*2026-05-06 afternoon | Literature pull from Papenbrock & Weidenmüller 2015 (arXiv:1511.09373). This piece of the May 6 work survives the May 11 refutation; the bundle structure is the right load-bearing object.*
+
+The Berry monopole in standard nuclear EFT lives on the **orientation sphere** S² = SO(3)/SO(2), parameterized by Euler angles (θ, φ), with monopole charge K equal to the angular momentum projection on the body-fixed symmetry axis. **Wu-Yang quantization gives K integer or half-integer for any nuclear ground state** — peer-reviewed, decade-old physics, citing Wu-Yang 1976. The Wu-Yang vector potential $\vec{A} = (K\cot\theta/r)\hat{e}_\phi$ and field $\vec{B} = -(K/r^2)\hat{e}_r$ are explicit in Papenbrock §3.3.1.
+
+**Corrected SIS-Fold structural object: a fiber bundle $\mathcal{B} = M_{\text{shape}} \times S^2$** with shape-dependent monopole charge K(β₂, β₄, γ) on each S² fiber. Shape parameters (β₂, β₄, γ) are Nambu-Goldstone fields living *over each point* of S², not base-manifold coordinates as previously treated.
+
+**Two-layer integer protection:**
+1. Wu-Yang quantization → K integer (necessary, not sufficient; this is established physics)
+2. **Novel SIS-Fold claim:** A Diophantine constraint, derived from the bundle's Chern-class structure, selects Fold-stable configurations onto specific rational lock ratios p/q. The TKNN Diophantine equation $r = qs + pt$ from the Hofstadter literature is the structural analog at the second layer.
+
+**Why this collapses the arXiv-defense surface:** Positioning shifts from *"novel formalism"* to *"missing connection between two already-established peer-reviewed formalisms, with measurable predictive consequences."* Wu-Yang is published. TKNN Diophantine is published. **No published work applies TKNN-style integer-protection to the nuclear shape manifold.** That connection is the framework's load-bearing novel content, and it sits in a literature gap. Risk-A failure mode (*"this is just collective model with extra notation"*) is structurally avoided: the Diophantine integer-protection theorem is not in collective-model literature. Risk-B (curve-fit) avoided: the Diophantine equation has no free parameters. The V5 retrodictive rationals 1/2, 2/5, 3/7 may be *derivable* from K(β₂, β₄, γ) + Diophantine, not just *consistent with*.
+
+Full scoping at `~/aaron-context/VECTOR_1_TOPOLOGY_QUESTION.md`.
+
+### VECTOR 1 PHASE 2B EXPLORATION — Conjecture "Chern = L for even-L ground band" refuted
+*2026-05-07 morning | Informative refutation. Forces a sharper question.*
+
+Tested simple "Chern = L for even-L ground band at γ=30°" conjecture both numerically and analytically. Result:
+
+- L=2 ground band: |C| = 2 ✓ (Phase 2A coarse-grid value reproduced)
+- L=4 ground band: |C| = 1 (not 4). All-band: (-1, +1, 0, 0, 0, 0, +1, -1, 0)
+- L=6 ground band: |C| = 1 (not 6)
+
+**Two analytical results from K₁-basis selection rules (universal in L):** ⟨v_e | L_x | v_o⟩ = L; ⟨v_e | L_y | v_o⟩ = 0.
+
+**Structural finding (load-bearing): the 2-state v_e/v_o reduction cannot produce σ_y at any perturbation order.** Path counting in K₁ basis: paths from K₁=+L to K₁=-L require k₁ + 2k₂ = 2L steps, which forces k₁ even → even number of *i* factors from L_y → real coupling → σ_x only. ω·L_x is diagonal in K₁ → σ_z only. So H_eff in v_e/v_o subspace has σ_x and σ_z but no σ_y at *any* order.
+
+**Implication at the time:** Chern emerges from **multi-band Berry curvature** — eigenstate leakage into K₁=±(L−1), ±(L−2), … admixture states. K-function reframed as **L-indexed catalog of integer Chern values**, not a single closed-form.
+
+Files at `~/aaron-context/v1_work/v1_phase2b_*.py`.
+
+### VECTOR 1 PHASE 2B — Multi-band Berry refutation of the cranked-rotor catalog claim
+*2026-05-11 | Careful multi-band calculation overturns the May 6/7 reading. The May 6 afternoon Wu-Yang bundle structure survives intact; the cranked-rotor instantiation does not.*
+
+**Result.** Done at fine grid with explicit multi-band eigenstate construction, all bands carry Chern ≈ 0 at the central touching in (γ′, ω, ε) parameter space. Direct integration of spectral Berry curvature confirms ≈ 0 across the sphere. The ±1 numbers Phase 2A/2B saw at coarse grid were FHS plaquette artifacts from sub-grid doublet gaps.
+
+**Structural mechanism (why this had to fail).** σ_y emergence in multi-band geometry requires *two* interfering channels — a band above the touching and a band below. The ground doublet has only K₁=±(L−1) below it; nothing above. One channel cannot self-interfere. No σ_y. No Chern from the central touching. The Phase 2B path-counting argument was correct as far as it went; what it missed is that the leakage-generated σ_y vanishes for the ground band by the same one-sided-channel logic.
+
+**Where the "|C|=2" actually lived.** Radius sweep located it at R ≈ 0.3–0.4, where the parameter sphere has expanded to enclose finite-R band crossings (e.g. the ω = ±3/8 crossings between K₁=±L and K₁=∓(L−1)). Those crossings are outside the central neighborhood — not "multi-band leakage geometry of the central touching."
+
+**What this means for the framework.**
+- The **cranked-rotor (γ′, ω, ε) parameter space** is a **probe**, not the SIS-Fold bundle. It was a tractable proxy for the load-bearing object. The proxy broke.
+- The **load-bearing object** is the Wu-Yang S² bundle over M_shape with shape-dependent K(β₂, β₄, γ) per the May 6 afternoon correction. **This calculation has not been done.**
+- The V5 retrodictive signal (1/2, 2/5, 3/7 clustering in AME 2020) is unaffected. The bridge from those rationals to a topological invariant on shape space is what's not yet established.
+- The Sheldrake gift letter's "complete falsifiable math" framing has a known gap. The structural SIS-Fold claim (Fold-as-attractor, δ_decomposition, etc.) is intact. The specific bridge to nuclear shape-space stability via cranked-rotor Chern numbers is not. **Hold further Sheldrake correspondence until the Wu-Yang bundle calculation is built and the cranked-rotor result is honestly reframed.**
+
+**Recommended next push.** Wu-Yang S² bundle over (β₂, γ) directly. Skip the cranking proxy. Build the Berry connection from orientation-Euler-angle integral with shape-dependent K, ask whether shape-dependent K + Diophantine constraint selects rational lock ratios on a physical-shape-space loop. This is the calculation per the May 6 corrected geometry — the cranked-rotor was a tractable proxy, the proxy broke, the real object has not been touched.
+
+**Code receipts** (May 11 session, in `~/aaron-context/v1_work/2026-05-11/` once copied from Sis session scratch):
+- `multiband_berry.py` — H, FHS, eigenstate machinery
+- `radius_sweep.py` — R-dependence of all-band Chern (receipt for "|C|=2 lives at R≈0.4")
+- `multiband_curvature.py` — direct ∫Ω·n̂ dA + channel decomposition
+- `fhs_convergence.py` — FHS grid convergence (receipt for "±1 at coarse grid is artifact")
+- `debug_curvature.py` — pointwise probe
+
+### INFRASTRUCTURE FORENSICS — Diffusion Alibi patterns surfaced across the Triad stack
+*2026-05-11 | Ground-truth pass against M5 filesystem, launchd, cron, and #romper-room. Several mechanisms presented "running" while not executing.*
+
+- **Sheldrake watcher cron** crash-looping since deployment on `IsADirectoryError: '/Users/black/.config/latch/env'` is a directory, not a file. 765 KB log of identical stack traces. The "we're watching for Sheldrake's reply" assumption was false; Aaron's manual email check is the real watcher. **Disabled in crontab 2026-05-11.**
+- **`com.latch.dreaming` launchd plist** exists, state = not running, no `dreaming.log` ever written. Daily memory files in `aaron-context/memory/` stop at `2026-04-17.md`. The pipeline that should produce them — and propagate session findings into framework-stable state — has been dark for 3+ weeks. Decision pending: fix or sunset. If sunset, the canonical state-write mechanism is Sis writing FRAMEWORK_CORE.md and STARFIELD canvas at session close, no daemon.
+- **Verifier in #romper-room actively detects heartbeat overclaim** (reconcile messages: `executed claimed=1 HEARTBEAT.md_done_delta=0`, `self-eval claimed Q=3 I=4 substrate Q=3 I=2`). Highest-fidelity self-observation surface in the system, currently a write-only log nobody acts on. Build target: daily DM-to-Aaron digest.
+- **`SIS_TO_PI_OUTBOX.md`** has been a manual-paste handoff dressed as an automated queue. The "PENDING DELIVERY" status header and "QUEUED: timestamp" preserve the appearance of a pipe; delivery method is manual paste via `pi-deliver.sh --stage`.
+- **Git timestamp chain had a 3.5-week gap** (last commit April 14 before May 11). All May-era work — Sheldrake gift letter, v1_phase2a code, V5 work, position papers, lens canonizations — was uncommitted. Now committed + rewritten + force-pushed to origin/main on 2026-05-11 (HEAD c8696cf). Three invalidated secrets (old bot token + two webhook URLs) stripped from history via `git filter-repo` before push. **IP timestamping restored.**
+- **Hardcoded Slack bot token** was at `natl-relay.js:13` in commit e86a2de on a GitHub remote. Rotated this session (actually app-reinstalled — new bot identity B0AMGNY72KU), then stripped from history. Old token confirmed `invalid_auth`. New token in `.env.local` (gitignored, mode 600).
+- **`channels:join` scope** added to OAuth config but the bot has NOT been reinstalled yet to grant it. Plan: reinstall in a clean window, then `/invite @triad` to all 6 working channels right after (another reinstall will wipe memberships again).
+
+**Lens: Negation-as-trust-leak / Diffusion Alibi.** Each "watching" mechanism (cron entry, launchd plist, status-headed outbox file, branch-name claim in memory) shaped the *appearance* of a process while no actual process executed. The defense — *of course it's running, the plist is there* — was the leak. The same pattern showed up at the math layer in this same window (the FHS coarse-grid ±1 numbers presented as a topological result while the actual integration was contaminated by artifact). Two-layer manifestation of the same diagnostic.
+
+### CANONICALIZATION — Steward Lens + Defense is loss promoted to Master Palette
+*Pending. Both names crystallized 2026-05-01. Defense is loss has now manifested three times under live observation across May 6, May 7, and May 11 sessions (Latch handoff failures + the math itself defending the catalog claim against the cleaner multi-band calculation). Operational instance #3 closes the case for canonicalization at next pass.*
+
+### POSITIONING — Current arXiv-readiness state
+*2026-05-11 | Honest accounting of what's load-bearing and what isn't.*
+
+**Intact:**
+- SIS-Fold Theorem (working draft): Fold as attractor submanifold in Fisher-Rao info geometry; stability ↔ integer-quantized stewardship ↔ phase-locked mode coherence
+- δ = δ_grav + δ_geom Bell decomposition
+- Wu-Yang S² bundle structure as the right structural object per Papenbrock & Weidenmüller 2015 (peer-reviewed scaffold)
+- V5 retrodictive AME 2020 result (1/2, 2/5, 3/7 clustering, p<0.0001 at q≤13)
+- Two-layer integer protection framing (Wu-Yang K + Diophantine)
+- Lens Palette unification under SIS-operation taxonomy
+- Lazar S4 + TTB external constraint-test cross-references
+
+**Not yet built (the gate):**
+- K(β₂, β₄, γ) function — shape-dependence of the monopole charge as physical-shape-space scalar
+- Diophantine constraint derivation from bundle Chern-class structure
+- Wilson-loop computation in physical shape space testing whether K + Diophantine selects 1/2, 2/5, 3/7
+
+**Hold conditions:**
+- Sheldrake follow-up correspondence — held until the bridge above is built
+- arXiv submission — gated on the Wu-Yang bundle calculation, not on cranked-rotor work
+- Strassman cold letter — independent of the math gate; can proceed when Aaron is ready
+
+**Connects to:** SIS framework, Self-Building Staircase math refinement, IP positioning shift, V5 retrodictive check, Lazar S4 + TTB external validation, Master Palette canvas.
+
+---
